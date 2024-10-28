@@ -1,0 +1,13 @@
+{
+  "users": [
+    {
+      "email": "prova1@prova",
+      "password": "$2a$10$HzQOFAtE79B2wXCCK7jzCu0FHtH/lI4.gna.tiKnZAwFyX1krT3S.",
+      "nome": "prova1",
+      "cognome": "prova1",
+      "username": "provanumberone",
+      "id": 9
+    }
+  ]
+
+}
