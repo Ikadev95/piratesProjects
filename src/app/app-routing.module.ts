@@ -17,6 +17,14 @@ const routes: Routes = [
     canActivate: [AuthGuard],
   },
   {
+    path: 'che-pirata-sei',
+    loadChildren: () =>
+      import('./pages/che-pirata-sei/che-pirata-sei.module').then(
+        (m) => m.ChePirataSeiModule
+      ),
+    canActivate: [AuthGuard],
+  },
+  {
     path: 'register',
     loadChildren: () =>
       import('./pages/register/register.module').then((m) => m.RegisterModule),
