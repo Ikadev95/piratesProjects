@@ -7,7 +7,14 @@
       "cognome": "prova1",
       "username": "provanumberone",
       "id": 9
+    },
+    {
+      "email": "fegughi@gmail.com",
+      "password": "$2a$10$f8xs8hyXsEdQRP5ZWLwBfuqoPRZnsPhREWlgtIGt56OyNgQzvP.Na",
+      "nome": "Federica",
+      "cognome": "Guglielmo",
+      "username": "federika",
+      "id": 10
     }
   ]
-
 }
