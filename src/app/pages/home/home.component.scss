@@ -1,10 +1,10 @@
-.port {
+.port{
   width: 100%;
 }
-.aside {
+.aside{
   height: calc(100vh - 100px);
 }
-.imgPap {
+.imgPap{
   width: 100%;
 }
 .button-container {
@@ -14,7 +14,7 @@
 }
 
 .btn-pirate {
-  background-color: #1a4e5b;
+  background-color:  #0C2845;
   color: #ffffff;
   border: 3px solid #2ba3a8;
   border-radius: 30px;
@@ -38,7 +38,7 @@
   }
 
   &:before {
-    content: "🏴‍☠️";
+    content: " 🏴‍☠️";
     position: absolute;
     left: 25px;
     font-size: 32px;
