@@ -1,9 +1,51 @@
-.port{
+.port {
   width: 100%;
 }
-.aside{
+.aside {
   height: calc(100vh - 100px);
 }
-.imgPap{
+.imgPap {
   width: 100%;
+}
+.button-container {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+.btn-pirate {
+  background-color: #1a4e5b;
+  color: #ffffff;
+  border: 3px solid #2ba3a8;
+  border-radius: 30px;
+  padding: 30px 60px;
+  font-family: "Pirata One", sans-serif;
+  font-size: 28px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  transition: all 0.3s ease;
+  position: relative;
+  cursor: pointer;
+  animation: pulsate 2s infinite;
+  margin: 0 20px;
+
+  &:hover {
+    animation: glow 1s alternate infinite;
+    background-color: #2ba3a8;
+    border-color: #3bded6;
+    color: #fffbe0;
+    transform: scale(1.08);
+  }
+
+  &:before {
+    content: "🏴‍☠️";
+    position: absolute;
+    left: 25px;
+    font-size: 32px;
+    transition: all 0.3s ease;
+  }
+
+  &:hover:before {
+    transform: rotate(20deg);
+  }
 }

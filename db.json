@@ -15,6 +15,14 @@
       "cognome": "Guglielmo",
       "username": "federika",
       "id": 10
+    },
+    {
+      "email": "federico.peralta@hotmail.it",
+      "password": "$2a$10$FmCc4puN5q/ogkQ0jREvWOgQfUi0ztwBnRtlA/.Gzn4oPigABqOQO",
+      "nome": "Federico",
+      "cognome": "Peralta",
+      "username": "Fedepera",
+      "id": 11
     }
   ]
 }
