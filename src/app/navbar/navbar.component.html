@@ -1,0 +1,24 @@
+<nav class="navbar navbar-expand-lg  ">
+  <div class="container-fluid ">
+    <a class="navbar-brand text-white " routerLink="">Pirates ☠️</a>
+    <button (click) = "toggleMenu()" class="navbar-toggler " type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class=" navbar-collapse " [ngClass]="isMenuOpen ? 'collapsed' : 'collapse'" id="navbarScroll">
+      <ul class="navbar-nav ms-auto my-2 my-lg-0">
+        <li class="nav-item" >
+          <a class="nav-link text-white " routerLink ="">
+            logout</a>
+        </li>
+        <div class="d-flex align-items-center">
+
+          <div class="flex-shrink-0 dropdown">
+            <a routerLink="" class="d-block link-body-emphasis text-decoration-none " aria-expanded="false">
+              <img src="https://github.com/mdo.png" alt="mdo" width="32" height="32" class="rounded-circle">
+            </a>
+          </div>
+        </div>
+      </ul>
+    </div>
+  </div>
+</nav>
