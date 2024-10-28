@@ -7,6 +7,8 @@ $secondary: #54D8C2;
 
 body{
    background-image: url(assets/sfondo.png);
+   background-repeat: no-repeat;
+   background-size: cover;
 }
 h1, h2 ,h3 ,h4 {
   font-family: "Pirata One", serif;
