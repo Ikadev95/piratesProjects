@@ -15,22 +15,32 @@ export class CacciaAlTesoroComponent {
   indizio7: boolean = false;
   indizio8: boolean = false;
   finegioco: boolean = false;
+  contaclick: number = 0;
+  punteggio: number = 116;
 
   constructor() {}
 
   ngOnInit() {}
 
+  incrementaClick() {
+    this.contaclick++;
+    console.log(this.contaclick);
+  }
+
   primostep() {
+    this.incrementaClick();
     this.indizio1 = true;
   }
 
   secondostep() {
+    this.incrementaClick();
     if (this.indizio1) {
       this.indizio2 = true;
     }
   }
 
   terzostep() {
+    this.incrementaClick();
     if (this.indizio2) {
       this.indizio3 = true;
     } else {
@@ -39,6 +49,7 @@ export class CacciaAlTesoroComponent {
   }
 
   quartostep() {
+    this.incrementaClick();
     if (this.indizio3) {
       this.indizio4 = true;
     } else {
@@ -48,6 +59,7 @@ export class CacciaAlTesoroComponent {
   }
 
   quintostep() {
+    this.incrementaClick();
     if (this.indizio4) {
       this.indizio5 = true;
     } else {
@@ -58,6 +70,7 @@ export class CacciaAlTesoroComponent {
   }
 
   sestostep() {
+    this.incrementaClick();
     if (this.indizio5) {
       this.indizio6 = true;
     } else {
@@ -69,6 +82,7 @@ export class CacciaAlTesoroComponent {
   }
 
   settimostep() {
+    this.incrementaClick();
     if (this.indizio6) {
       this.indizio7 = true;
     } else {
@@ -81,8 +95,11 @@ export class CacciaAlTesoroComponent {
   }
 
   ottimostep() {
+    this.incrementaClick();
     if (this.indizio7) {
       this.indizio8 = true;
+      this.finegioco = true;
+      this.punteggio -= this.contaclick;
     } else {
       this.indizio1 = false;
       this.indizio2 = false;

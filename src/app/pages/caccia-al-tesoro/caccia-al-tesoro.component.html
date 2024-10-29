@@ -1,19 +1,58 @@
 <div class="container">
   <div class="row">
-    <div (click)="primostep()" class="col-12 col-md-4 border border-success">
+    <div
+      (click)="primostep()"
+      class="col-12 col-md-4 border border-3 border-dark"
+    >
+      <p>start</p>
       <p *ngIf="indizio1">primo indizio</p>
     </div>
-    <div (click)="secondostep()" class="col-12 col-md-4 border border-primary">
-      <p *ngIf="indizio2">secondo indizio</p>
+    <div
+      (click)="ottimostep()"
+      class="col-12 col-md-4 border border-3 border-dark"
+    >
+      <p *ngIf="indizio8">secondo indizio</p>
     </div>
-    <div (click)="terzostep()" class="col-12 col-md-4 border border-danger">
-      <p *ngIf="indizio3">terzo indizio</p>
+    <div
+      (click)="quintostep()"
+      class="col-12 col-md-4 border border-3 border-dark"
+    >
+      <p *ngIf="indizio5">terzo indizio</p>
     </div>
-    <div (click)="quartostep()" class="col-12 col-md-4 border border-warning">
-      <p *ngIf="indizio4">ultimo indizio</p>
+    <div
+      (click)="terzostep()"
+      class="col-12 col-md-4 border border-3 border-dark"
+    >
+      <p *ngIf="indizio3">ultimo indizio</p>
+    </div>
+    <div
+      (click)="secondostep()"
+      class="col-12 col-md-4 border border-3 border-dark"
+    >
+      <p *ngIf="indizio2">primo indizio</p>
+    </div>
+    <div
+      (click)="quartostep()"
+      class="col-12 col-md-4 border border-3 border-dark"
+    >
+      <p *ngIf="indizio4">secondo indizio</p>
+    </div>
+    <div
+      (click)="sestostep()"
+      class="col-12 col-md-4 border border-3 border-dark"
+    >
+      <p *ngIf="indizio6">terzo indizio</p>
+    </div>
+    <div
+      (click)="settimostep()"
+      class="col-12 col-md-4 border border-3 border-dark"
+    >
+      <p *ngIf="indizio7">ultimo indizio</p>
     </div>
   </div>
 </div>
-<h3 *ngIf="finegioco" class="text-center text-success">
+<h3 *ngIf="finegioco" class="text-center text-warning">
   hai trovato il tesoro
+
+  <h3>il tuo punteggio è {{ punteggio }}</h3>
 </h3>
