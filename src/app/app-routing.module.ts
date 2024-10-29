@@ -4,12 +4,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { UserGuard } from './guards/user.guard';
 
 const routes: Routes = [
-/*   {
-    path: '',
-    loadChildren: () =>
-      import('./pages/auth/auth.module').then((m) => m.AuthModule),
-    canActivate: [UserGuard],
-  }, */
+
   {
     path: 'home',
     loadChildren: () =>
@@ -36,7 +31,7 @@ const routes: Routes = [
       import('./pages/log-in/log-in.module').then((m) => m.LogInModule),
     canActivate: [UserGuard],
   },
-  { path: 'cutomize', loadChildren: () => import('./pages/customize/customize.module').then(m => m.CustomizeModule) },
+  { path: 'customize', loadChildren: () => import('./pages/customize/customize.module').then(m => m.CustomizeModule) },
   {
     path: '**',
     loadChildren: () =>
