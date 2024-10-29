@@ -23,6 +23,14 @@
       "cognome": "Peralta",
       "username": "Fedepera",
       "id": 11
+    },
+    {
+      "email": "gianmarco@pirata.it",
+      "password": "$2a$10$L.D76hfz.jwRFDOc.srbTu0cZ8X9CFk1/aK6hT58qNJiijgS.lBia",
+      "nome": "Gianmarco",
+      "cognome": "Arzanese",
+      "username": "Zanes",
+      "id": 12
     }
   ]
 }
