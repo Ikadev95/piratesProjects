@@ -26,7 +26,8 @@ export class CustomizeComponent implements OnInit {
     "spada-bandana.png",
     "spada-cintura-bandana.png",
     "spada-cappellopirata-cintura.png",
-    "cappellopirata-cintura.png"
+    "cappellopirata-cintura.png",
+    "spada-cappellopirata.png"
   ];
 
   ngOnInit(): void {
@@ -62,7 +63,17 @@ export class CustomizeComponent implements OnInit {
 
     const searchString = selectedItems.join('-') + '.png'; // questo ancora non va perchè non sempre sono nell'ordine corretto
 
-    this.foto = this.fotos.includes(searchString) ? `/pappagalli/${searchString}` : '/pappagalli/init.png';
+      if(this.fotos.find(foto => foto === searchString)){
+        this.foto = `/pappagalli/${searchString}`
+      }
+      else{
+        if(this.fotos.includes(searchString)){
+          console.log('no')
+        }
+        else{
+          this.foto = '/pappagalli/init.png'
+        }
+      }
   }
 
 }
