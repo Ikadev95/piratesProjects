@@ -5,31 +5,64 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './customize.component.html',
   styleUrl: './customize.component.scss'
 })
-export class CustomizeComponent implements OnInit{
+export class CustomizeComponent implements OnInit {
 
-  foto:string = "/pappagalli/init.png"
+  foto: string = "/pappagalli/init.png";
+
+  bandana: boolean = false;
+  spada: boolean = false;
+  cintura: boolean = false;
+  cappellopirata: boolean = false;
 
   fotos: string[] = [
-    "/pappagalli/init.png",
-    "/pappagalli/bandana.png",
-    "/pappagalli/cintura.png",
-    "/pappagalli/cappellopirata.png",
-    "/pappagalli/spada.png",
-    "/pappagalli/spada-bandana.png",
-    "/pappagalli/cintura-spada.png",
-    "/pappagalli/cintura-bandana.png",
-    "/pappagalli/spada-bandana.png",
-    "/pappagalli/spada-cintura-bandana.png",
-    "/pappagalli/spada-cappellopirata-cintura.png",
-    "/pappagalli/cappellopirata-cintura.png",
-    "/pappagalli/cappellopirata.png"
-  ]
-
+    "init.png",
+    "bandana.png",
+    "cintura.png",
+    "cappellopirata.png",
+    "spada.png",
+    "spada-bandana.png",
+    "cintura-spada.png",
+    "cintura-bandana.png",
+    "spada-bandana.png",
+    "spada-cintura-bandana.png",
+    "spada-cappellopirata-cintura.png",
+    "cappellopirata-cintura.png"
+  ];
 
   ngOnInit(): void {
-    console.log(this.fotos.filter(foto => foto.includes("cappello")))
-    console.log(this.fotos.filter(foto => foto === "cappellopirata"))
   }
 
+  toggleItem(element: string) {
+    switch(element) {
+      case 'spada':
+        this.spada = !this.spada;
+        break;
+      case 'cintura':
+        this.cintura = !this.cintura;
+        break;
+      case 'bandana':
+        this.bandana = !this.bandana;
+        if (this.bandana) this.cappellopirata = false;
+        break;
+      case 'cappellopirata':
+        this.cappellopirata = !this.cappellopirata;
+        if (this.cappellopirata) this.bandana = false;
+        break;
+    }
+    this.updateFoto();
+  }
+
+  updateFoto() {
+    const selectedItems = [];
+    if (this.spada) selectedItems.push('spada');
+    if (this.cintura) selectedItems.push('cintura');
+    if (this.bandana) selectedItems.push('bandana');
+    if (this.cappellopirata) selectedItems.push('cappellopirata');
+
+
+    const searchString = selectedItems.join('-') + '.png'; // questo ancora non va perchè non sempre sono nell'ordine corretto
+
+    this.foto = this.fotos.includes(searchString) ? `/pappagalli/${searchString}` : '/pappagalli/init.png';
+  }
 
 }
