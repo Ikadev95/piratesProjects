@@ -15,19 +15,19 @@ export class CustomizeComponent implements OnInit {
   cappellopirata: boolean = false;
 
   fotos: string[] = [
-    "init.png",
-    "bandana.png",
-    "cintura.png",
-    "cappellopirata.png",
-    "spada.png",
-    "spada-bandana.png",
-    "cintura-spada.png",
-    "cintura-bandana.png",
-    "spada-bandana.png",
-    "spada-cintura-bandana.png",
-    "spada-cappellopirata-cintura.png",
-    "cappellopirata-cintura.png",
-    "spada-cappellopirata.png"
+    "/pappagalli/init.png",
+    "/pappagalli/bandana.png",
+    "/pappagalli/cintura.png",
+    "/pappagalli/cappellopirata.png",
+    "/pappagalli/spada.png",
+    "/pappagalli/spada-bandana.png",
+    "/pappagalli/cintura-spada.png",
+    "/pappagalli/cintura-bandana.png",
+    "/pappagalli/spada-bandana.png",
+    "/pappagalli/spada-cintura-bandana.png",
+    "/pappagalli/spada-cappellopirata-cintura.png",
+    "/pappagalli/cappellopirata-cintura.png",
+    "/pappagalli/spada-cappellopirata.png"
   ];
 
   ngOnInit(): void {
@@ -53,6 +53,17 @@ export class CustomizeComponent implements OnInit {
     this.updateFoto();
   }
 
+  search(searchString:string): any {
+    this.fotos.forEach(
+      foto => {
+        if(foto.includes(searchString)){
+          return foto
+        }
+        else return ""
+      }
+    )
+  }
+
   updateFoto() {
     const selectedItems = [];
     if (this.spada) selectedItems.push('spada');
@@ -61,19 +72,10 @@ export class CustomizeComponent implements OnInit {
     if (this.cappellopirata) selectedItems.push('cappellopirata');
 
 
-    const searchString = selectedItems.join('-') + '.png'; // questo ancora non va perchè non sempre sono nell'ordine corretto
+    const searchString = selectedItems.join('-') + '.png'
 
-      if(this.fotos.find(foto => foto === searchString)){
-        this.foto = `/pappagalli/${searchString}`
-      }
-      else{
-        if(this.fotos.includes(searchString)){
-          console.log('no')
-        }
-        else{
-          this.foto = '/pappagalli/init.png'
-        }
-      }
+    this.foto = this.search(searchString)
+
   }
 
 }
