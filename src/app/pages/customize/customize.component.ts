@@ -53,16 +53,17 @@ export class CustomizeComponent implements OnInit {
     this.updateFoto();
   }
 
-  search(searchString:string): any {
-    this.fotos.forEach(
-      foto => {
-        if(foto.includes(searchString)){
-          return foto
+  search(searchString: string): any {
+    const results = [];
+    for (let i = 0; i < this.fotos.length; i++) {
+        const foto = this.fotos[i];
+        if (foto.includes(searchString)) {
+            results.push(foto);
         }
-        else return ""
-      }
-    )
-  }
+    }
+    return results;
+}
+
 
   updateFoto() {
     const selectedItems = [];
