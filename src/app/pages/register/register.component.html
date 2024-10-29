@@ -92,11 +92,12 @@
     <div class="d-grid">
       <button
         (click)="signup()"
-        class="btn btn-custom"
+        class="btn btn-primary"
         [disabled]="!form.valid"
       >
         Registrati
       </button>
+      <p> <a routerLink="" >torna al login</a></p>
       <p
         *ngIf="err"
         class="text-center text-danger p-3 border border-danger mt-3 rounded-5"
@@ -104,5 +105,6 @@
         email già registrata
       </p>
     </div>
+
   </form>
 </div>

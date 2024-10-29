@@ -1,18 +1,22 @@
-$primary:  #0C2845;
-$secondary: #54D8C2;
+$primary: #0c2845;
+$secondary: #54d8c2;
 /* Importing Bootstrap SCSS file. */
-@import 'bootstrap/scss/bootstrap';
+@import "bootstrap/scss/bootstrap";
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Pirata+One&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Pirata+One&display=swap");
 
-body{
-   background-image: url(assets/sfondo.png);
-   background-repeat: no-repeat;
-   background-size: cover;
+body {
+  background-image: url(assets/sfondo.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 100vh;
 }
-h1, h2 ,h3 ,h4 {
+h1,
+h2,
+h3,
+h4 {
   font-family: "Pirata One", serif;
 }
-h1{
+h1 {
   font-size: 60px;
 }

@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { NavComponent } from './nav.component';
+import { ChePirataSeiComponent } from './che-pirata-sei.component';
 
-describe('NavComponent', () => {
-  let component: NavComponent;
-  let fixture: ComponentFixture<NavComponent>;
+describe('ChePirataSeiComponent', () => {
+  let component: ChePirataSeiComponent;
+  let fixture: ComponentFixture<ChePirataSeiComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [NavComponent]
+      declarations: [ChePirataSeiComponent]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(NavComponent);
+    fixture = TestBed.createComponent(ChePirataSeiComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

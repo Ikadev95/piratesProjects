@@ -4,16 +4,24 @@ import { RouterModule, Routes } from '@angular/router';
 import { UserGuard } from './guards/user.guard';
 
 const routes: Routes = [
-  {
+/*   {
     path: '',
     loadChildren: () =>
       import('./pages/auth/auth.module').then((m) => m.AuthModule),
     canActivate: [UserGuard],
-  },
+  }, */
   {
     path: 'home',
     loadChildren: () =>
       import('./pages/home/home.module').then((m) => m.HomeModule),
+    canActivate: [AuthGuard],
+  },
+  {
+    path: 'che-pirata-sei',
+    loadChildren: () =>
+      import('./pages/che-pirata-sei/che-pirata-sei.module').then(
+        (m) => m.ChePirataSeiModule
+      ),
     canActivate: [AuthGuard],
   },
   {
@@ -23,7 +31,7 @@ const routes: Routes = [
     canActivate: [UserGuard],
   },
   {
-    path: 'login',
+    path: '',
     loadChildren: () =>
       import('./pages/log-in/log-in.module').then((m) => m.LogInModule),
     canActivate: [UserGuard],
