@@ -1,24 +1,92 @@
-<div *ngIf="domande.length > 0">
-  <div>
-    <p>{{ domandeShuffle[index].domanda }}</p>
-    <p (click)="incrementCannoniere()">
-      {{ domandeShuffle[index].cannoniere }}
-    </p>
-    <p (click)="incrementCapitano()">{{ domandeShuffle[index].capitano }}</p>
-    <p (click)="incrementMozzo()">{{ domandeShuffle[index].mozzo }}</p>
-    <p (click)="incrementNavigatore()">
-      {{ domandeShuffle[index].navigatore }}
-    </p>
-    <p (click)="incrementSpugna()">{{ domandeShuffle[index].spugna }}</p>
-    <p (click)="incrementCorsaro()">{{ domandeShuffle[index].corsaro }}</p>
+<!-- che-pirata-sei.component.html -->
+<div class="pirate-quiz-container">
+  <div *ngIf="domande.length > 0" class="quiz-section animate-fadeInUp">
+    <div class="question-card">
+      <h2 class="question-text">{{ domandeShuffle[index].domanda }}</h2>
+
+      <div class="options-container">
+        <div
+          class="option animate-fadeInLeft animate-delay-1s"
+          (click)="incrementCannoniere()"
+        >
+          <div class="option-content">
+            <i class="fas fa-cannon"></i>
+            {{ domandeShuffle[index].cannoniere }}
+          </div>
+        </div>
+
+        <div
+          class="option animate-fadeInRight animate-delay-1s"
+          (click)="incrementCapitano()"
+        >
+          <div class="option-content">
+            <i class="fas fa-anchor"></i>
+            {{ domandeShuffle[index].capitano }}
+          </div>
+        </div>
+
+        <div
+          class="option animate-fadeInLeft animate-delay-2s"
+          (click)="incrementMozzo()"
+        >
+          <div class="option-content">
+            <i class="fas fa-broom"></i>
+            {{ domandeShuffle[index].mozzo }}
+          </div>
+        </div>
+
+        <div
+          class="option animate-fadeInRight animate-delay-2s"
+          (click)="incrementNavigatore()"
+        >
+          <div class="option-content">
+            <i class="fas fa-compass"></i>
+            {{ domandeShuffle[index].navigatore }}
+          </div>
+        </div>
+
+        <div
+          class="option animate-fadeInLeft animate-delay-3s"
+          (click)="incrementSpugna()"
+        >
+          <div class="option-content">
+            <i class="fas fa-water"></i>
+            {{ domandeShuffle[index].spugna }}
+          </div>
+        </div>
+
+        <div
+          class="option animate-fadeInRight animate-delay-3s"
+          (click)="incrementCorsaro()"
+        >
+          <div class="option-content">
+            <i class="fas fa-skull-crossbones"></i>
+            {{ domandeShuffle[index].corsaro }}
+          </div>
+        </div>
+      </div>
+
+      <div class="progress-bar">
+        <div class="progress" [style.width]="(index + 1) * 16.67 + '%'"></div>
+      </div>
+    </div>
   </div>
-</div>
 
-<div *ngIf="finedomande">
-  scopri finalmente che pirata sei
-  <button (click)="button()">scopri</button>
-</div>
+  <div *ngIf="finedomande" class="final-section animate-fadeInUp">
+    <h2 class="pirate-text">Arrr! Sei pronto a scoprire che pirata sei?</h2>
+    <button class="pirate-button" (click)="button()">
+      <i class="fas fa-treasure-chest"></i>
+      Scopri il tuo destino!
+    </button>
+  </div>
 
-<ng-container *ngIf="ruoloFinale">
-  <div *ngIf="scopriRuolo">Pirata, il tuo ruolo è: {{ ruoloFinale }}</div>
-</ng-container>
+  <ng-container *ngIf="ruoloFinale">
+    <div *ngIf="scopriRuolo" class="result-section animate-fadeInUp">
+      <div class="treasure-reveal">
+        <h1 class="result-title">Congratulazioni, Pirata!</h1>
+        <h2 class="role-text">Il tuo ruolo è:</h2>
+        <h3 class="role-name">{{ ruoloFinale | uppercase }}</h3>
+      </div>
+    </div>
+  </ng-container>
+</div>
