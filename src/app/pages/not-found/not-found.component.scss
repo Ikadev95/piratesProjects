@@ -1,0 +1,36 @@
+:host {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background-image: url("/assets/sfondo.png");
+  background-size: cover;
+  color: white;
+  text-align: center;
+  font-family: "Pirate One", sans-serif;
+}
+
+h1 {
+  font-size: 4rem;
+  color: #ffdd59;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+p {
+  font-size: 1.5rem;
+  margin: 20px 0;
+}
+
+.btn-home {
+  background-color: #ffdd59;
+  color: #000;
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: transform 0.3s;
+}
+
+.btn-home:hover {
+  transform: scale(1.1);
+}
