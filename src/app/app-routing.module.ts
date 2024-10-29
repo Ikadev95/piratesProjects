@@ -44,13 +44,6 @@ const routes: Routes = [
       ),
   },
   {
-    path: 'caccia-al-tesoro',
-    loadChildren: () =>
-      import('./pages/caccia-al-tesoro/caccia-al-tesoro.module').then(
-        (m) => m.CacciaAlTesoroModule
-      ),
-  },
-  {
     path: '**',
     loadChildren: () =>
       import('./pages/not-found/not-found.module').then(
