@@ -1,76 +1,78 @@
 <!-- che-pirata-sei.component.html -->
 <div class="pirate-quiz-container">
-  <div *ngIf="domande.length > 0" class="quiz-section animate-fadeInUp">
-    <div class="question-card">
-      <h2 class="question-text">{{ domandeShuffle[index].domanda }}</h2>
+  <ng-container *ngIf="mostraQuiz">
+    <div *ngIf="domande.length > 0" class="quiz-section animate-fadeInUp">
+      <div class="question-card">
+        <h2 class="question-text">{{ domandeShuffle[index].domanda }}</h2>
 
-      <div class="options-container">
-        <div
-          class="option animate-fadeInLeft animate-delay-1s"
-          (click)="incrementCannoniere()"
-        >
-          <div class="option-content">
-            <i class="fas fa-cannon"></i>
-            {{ domandeShuffle[index].cannoniere }}
+        <div class="options-container">
+          <div
+            class="option animate-fadeInLeft animate-delay-1s"
+            (click)="incrementCannoniere()"
+          >
+            <div class="option-content">
+              <i class="fas fa-cannon"></i>
+              {{ domandeShuffle[index].cannoniere }}
+            </div>
+          </div>
+
+          <div
+            class="option animate-fadeInRight animate-delay-1s"
+            (click)="incrementCapitano()"
+          >
+            <div class="option-content">
+              <i class="fas fa-anchor"></i>
+              {{ domandeShuffle[index].capitano }}
+            </div>
+          </div>
+
+          <div
+            class="option animate-fadeInLeft animate-delay-2s"
+            (click)="incrementMozzo()"
+          >
+            <div class="option-content">
+              <i class="fas fa-broom"></i>
+              {{ domandeShuffle[index].mozzo }}
+            </div>
+          </div>
+
+          <div
+            class="option animate-fadeInRight animate-delay-2s"
+            (click)="incrementNavigatore()"
+          >
+            <div class="option-content">
+              <i class="fas fa-compass"></i>
+              {{ domandeShuffle[index].navigatore }}
+            </div>
+          </div>
+
+          <div
+            class="option animate-fadeInLeft animate-delay-3s"
+            (click)="incrementSpugna()"
+          >
+            <div class="option-content">
+              <i class="fas fa-water"></i>
+              {{ domandeShuffle[index].spugna }}
+            </div>
+          </div>
+
+          <div
+            class="option animate-fadeInRight animate-delay-3s"
+            (click)="incrementCorsaro()"
+          >
+            <div class="option-content">
+              <i class="fas fa-skull-crossbones"></i>
+              {{ domandeShuffle[index].corsaro }}
+            </div>
           </div>
         </div>
 
-        <div
-          class="option animate-fadeInRight animate-delay-1s"
-          (click)="incrementCapitano()"
-        >
-          <div class="option-content">
-            <i class="fas fa-anchor"></i>
-            {{ domandeShuffle[index].capitano }}
-          </div>
+        <div class="progress-bar">
+          <div class="progress" [style.width]="(index + 1) * 16.67 + '%'"></div>
         </div>
-
-        <div
-          class="option animate-fadeInLeft animate-delay-2s"
-          (click)="incrementMozzo()"
-        >
-          <div class="option-content">
-            <i class="fas fa-broom"></i>
-            {{ domandeShuffle[index].mozzo }}
-          </div>
-        </div>
-
-        <div
-          class="option animate-fadeInRight animate-delay-2s"
-          (click)="incrementNavigatore()"
-        >
-          <div class="option-content">
-            <i class="fas fa-compass"></i>
-            {{ domandeShuffle[index].navigatore }}
-          </div>
-        </div>
-
-        <div
-          class="option animate-fadeInLeft animate-delay-3s"
-          (click)="incrementSpugna()"
-        >
-          <div class="option-content">
-            <i class="fas fa-water"></i>
-            {{ domandeShuffle[index].spugna }}
-          </div>
-        </div>
-
-        <div
-          class="option animate-fadeInRight animate-delay-3s"
-          (click)="incrementCorsaro()"
-        >
-          <div class="option-content">
-            <i class="fas fa-skull-crossbones"></i>
-            {{ domandeShuffle[index].corsaro }}
-          </div>
-        </div>
-      </div>
-
-      <div class="progress-bar">
-        <div class="progress" [style.width]="(index + 1) * 16.67 + '%'"></div>
       </div>
     </div>
-  </div>
+  </ng-container>
 
   <div *ngIf="finedomande" class="final-section animate-fadeInUp">
     <h2 class="pirate-text">Arrr! Sei pronto a scoprire che pirata sei?</h2>
@@ -88,5 +90,8 @@
         <h3 class="role-name">{{ ruoloFinale | uppercase }}</h3>
       </div>
     </div>
+    <button routerLink="/home" class="btn-pirate">
+      &nbsp; torna alla Home
+    </button>
   </ng-container>
 </div>
