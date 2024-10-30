@@ -1,5 +1,6 @@
 {
-  "users": [    {
+  "users": [
+    {
       "email": "test@score",
       "password": "$2a$10$3Npgd5K5xOLWN2A15DKVRuSQb9CfSfhaL2X5D3SC2Gq81Ta5b2nlS",
       "nome": "test-score",
@@ -16,6 +17,24 @@
       "username": "prova-test8",
       "score": 0,
       "id": 14
+    },
+    {
+      "email": "fegughi@gmail.com",
+      "password": "$2a$10$DFMoHrAwDD1VYY/rDyO6AeExQni4JVRq/ppBbxClFM2oqHu2ebAN.",
+      "nome": "Federica",
+      "cognome": "Guglielmo",
+      "username": "federika",
+      "score": 108,
+      "id": 15
+    },
+    {
+      "email": "prova@gmail.com",
+      "password": "$2a$10$M39QmUmj0FgJiemzK7oR2eD/ZrC9RLxQbgJSJIwnKZDlmFgppH2kW",
+      "nome": "ika",
+      "cognome": "gu",
+      "username": "ika",
+      "score": 106,
+      "id": 16
     }
   ]
 }

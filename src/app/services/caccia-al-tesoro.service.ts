@@ -5,4 +5,8 @@ import { environment } from '../../environments/environment.development';
 @Injectable({
   providedIn: 'root',
 })
-export class CacciaAlTesoroService {}
+export class CacciaAlTesoroService {
+  score!:number
+  constructor(){}
+}
+
