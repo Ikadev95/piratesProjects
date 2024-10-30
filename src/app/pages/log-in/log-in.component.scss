@@ -1,4 +1,146 @@
 $danger: #2483e2;
+$primary: #007bff;
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translate3d(0, -100%, 0);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 100%, 0);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes tada {
+  from {
+    transform: scale3d(1, 1, 1);
+  }
+
+  10%,
+  20% {
+    transform: scale3d(0.9, 0.9, 0.9) rotate3d(0, 0, 1, -3deg);
+  }
+
+  30%,
+  50%,
+  70%,
+  90% {
+    transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, 3deg);
+  }
+
+  40%,
+  60%,
+  80% {
+    transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, -3deg);
+  }
+
+  to {
+    transform: scale3d(1, 1, 1);
+  }
+}
+
+@keyframes pulse {
+  from {
+    transform: scale3d(1, 1, 1);
+  }
+
+  50% {
+    transform: scale3d(1.05, 1.05, 1.05);
+  }
+
+  to {
+    transform: scale3d(1, 1, 1);
+  }
+}
+
+@keyframes bounceIn {
+  from,
+  20%,
+  40%,
+  60%,
+  80%,
+  to {
+    animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+  }
+
+  0% {
+    opacity: 0;
+    transform: scale3d(0.3, 0.3, 0.3);
+  }
+
+  20% {
+    transform: scale3d(1.1, 1.1, 1.1);
+  }
+
+  40% {
+    transform: scale3d(0.9, 0.9, 0.9);
+  }
+
+  60% {
+    opacity: 1;
+    transform: scale3d(1.03, 1.03, 1.03);
+  }
+
+  80% {
+    transform: scale3d(0.97, 0.97, 0.97);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale3d(1, 1, 1);
+  }
+}
+
+@keyframes shakeX {
+  from,
+  to {
+    transform: translate3d(0, 0, 0);
+  }
+
+  10%,
+  30%,
+  50%,
+  70%,
+  90% {
+    transform: translate3d(-10px, 0, 0);
+  }
+
+  20%,
+  40%,
+  60%,
+  80% {
+    transform: translate3d(10px, 0, 0);
+  }
+}
+
+div {
+  font-family: "Pirata One", cursive;
+}
+
+.pirate-bg {
+  background-image: url("/src/assets/sfondo.png");
+  background-size: cover;
+  background-position: center;
+}
+
+.pirate-title {
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
 .form-container {
   max-width: 400px;
   margin: 50px auto;
@@ -49,14 +191,33 @@ $danger: #2483e2;
 }
 
 .btn-custom {
-  background-color: $danger;
+  background-color: $primary;
   color: white;
   font-weight: bold;
   border-radius: 50px;
   padding: 10px 20px;
   transition: background-color 0.3s ease;
+  animation: pulse 1s infinite;
 }
 
 .btn-custom:hover {
-  background-color: rgb(8, 0, 255);
+  background-color: darken($primary, 10%);
+}
+
+.pirate-link {
+  color: $primary;
+  text-decoration: none;
+  transition: color 0.3s ease;
+  animation: bounceIn 1s;
+
+  &:hover {
+    color: darken($primary, 10%);
+  }
+}
+
+.error-message {
+  color: $danger;
+  font-size: 14px;
+  margin-top: 5px;
+  animation: shakeX 0.5s;
 }

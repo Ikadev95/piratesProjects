@@ -25,6 +25,14 @@ const routes: Routes = [
     canActivate: [AuthGuard],
   },
   {
+    path: 'caccia-al-tesoro',
+    loadChildren: () =>
+      import('./pages/caccia-al-tesoro/caccia-al-tesoro.module').then(
+        (m) => m.CacciaAlTesoroModule
+      ),
+    canActivate: [AuthGuard],
+  },
+  {
     path: 'register',
     loadChildren: () =>
       import('./pages/register/register.module').then((m) => m.RegisterModule),
