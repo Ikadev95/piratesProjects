@@ -45,7 +45,7 @@ const routes: Routes = [
     canActivate: [UserGuard],
   },
   {
-    path: 'cutomize',
+    path: 'customize',
     loadChildren: () =>
       import('./pages/customize/customize.module').then(
         (m) => m.CustomizeModule
