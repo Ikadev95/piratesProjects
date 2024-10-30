@@ -57,7 +57,16 @@
       "cognome": "test-score3",
       "username": "test-score3",
       "id": 15,
-      "score": 108
+      "score": -2
+    },
+    {
+      "email": "test@score5",
+      "password": "$2a$10$dZpJtk8DQ5dsOIG/xUwRp.mb/09SRSjoAH5L/.EmACb4fLgfmsZo.",
+      "nome": "test-score5",
+      "cognome": "test-scor5",
+      "username": "test-score5",
+      "id": 16,
+      "score": 6
     }
   ]
 }

@@ -119,39 +119,36 @@ export class CacciaAlTesoroComponent {
     if (this.indizio7) {
       this.indizio8 = true;
       this.punteggio -= this.contaclick;
-      this.user.score = this.punteggio;
-      if (this.user.id) {
-        this.addScoreAtUser(this.user.id, this.user.score);
-      }
-      setTimeout(this.waitPatch, 2000);
 
-      console.log(this.user);
+      if (
+        this.user.id &&
+        (!this.user.score || this.punteggio > this.user.score)
+      ) {
+        this.addScoreAtUser(this.user.id, this.punteggio);
+        this.isRecord = true;
+      } else {
+        this.isRecord = false;
+      }
+
+      this.finegioco = true;
     } else {
-      this.indizio1 = false;
-      this.indizio2 = false;
-      this.indizio3 = false;
-      this.indizio4 = false;
-      this.indizio5 = false;
-      this.indizio6 = false;
+      this.indizio1 = this.indizio2 = this.indizio3 = this.indizio4 = false;
+      this.indizio5 = this.indizio6 = this.indizio7 = false;
     }
+  }
+
+  addScoreAtUser(id: number, score: number) {
+    this.cacciaServ.addScoreAtUser(id, score).subscribe({
+      next: (updatedUser: Partial<iUser>) => {
+        this.user.score = updatedUser.score;
+        console.log('Punteggio aggiornato:', updatedUser.score);
+      },
+      error: (err) =>
+        console.error("Errore nell'aggiornamento del punteggio:", err),
+    });
   }
 
   getAllUsers() {
     this.cacciaServ.getAllUser().subscribe((user) => (this.users = user));
-  }
-
-  addScoreAtUser(id: number, score: number) {
-    this.cacciaServ.addScoreAtUser(id, score).subscribe();
-  }
-
-  waitPatch() {
-    this.finegioco = true;
-    if (this.user.score) {
-      if (this.punteggio > this.user.score) {
-        this.isRecord = true;
-      }
-    }
-    this.user.score = this.punteggio;
-    return this.user.score;
   }
 }
