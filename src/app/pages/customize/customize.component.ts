@@ -9,64 +9,123 @@ export class CustomizeComponent implements OnInit {
 
   foto: string = "/pappagalli/init.png";
 
+  fotog: string = "/pappagalli/init.png"
+
   spada: boolean = false;
   cintura: boolean = false;
   bandana: boolean = false;
   cappellopirata: boolean = false;
+  genere:boolean = false;
 
   fotos: any[] = [
     {
       src: "/pappagalli/init.png",
-      array: [false,false,false,false]
+      array: [false,false,false,false,false]
     },
     {
       src: "/pappagalli/bandana.png",
-      array: [false,false,true,false]
+      array: [false,false,true,false,false]
     },
     {
       src:  "/pappagalli/cintura.png",
-      array: [false,true,false,false]
+      array: [false,true,false,false,false]
     },
     {
       src:  "/pappagalli/cappellopirata.png",
-      array: [false,false,false,true]
+      array: [false,false,false,true,false]
     },
     {
       src:  "/pappagalli/spada.png",
-      array: [true,false,false,false]
+      array: [true,false,false,false,false]
     },
     {
       src:  "/pappagalli/spada-bandana.png",
-      array: [true,false,true,false]
+      array: [true,false,true,false,false]
     },
     {
       src:  "/pappagalli/cintura-spada.png",
-      array: [true,true,false,false]
+      array: [true,true,false,false,false]
     },
     {
       src:  "/pappagalli/cintura-bandana.png",
-      array: [false,true,true,false]
+      array: [false,true,true,false,false]
     },
     {
       src:   "/pappagalli/spada-bandana.png",
-      array: [true,false,true,false]
+      array: [true,false,true,false,false]
     },
     {
       src:   "/pappagalli/spada-cintura-bandana.png",
-      array: [true,true,true,false]
+      array: [true,true,true,false,false]
     },
     {
       src:   "/pappagalli/spada-cappellopirata-cintura.png",
-      array: [true,true,false,true]
+      array: [true,true,false,true,false]
     },
     {
       src:   "/pappagalli/cappellopirata-cintura.png",
-      array: [false,true,false,true]
+      array: [false,true,false,true,false]
     },
     {
       src:  "/pappagalli/spada-cappellopirata.png",
-      array: [true,false,false,true]
+      array: [true,false,false,true,false]
+    },
+
+
+
+    {
+      src: "/pappagalli/init2.png",
+      array: [false,false,false,false,true]
+    },
+    {
+      src: "/pappagalli/bandana2.png",
+      array: [false,false,true,false,true]
+    },
+    {
+      src:  "/pappagalli/cintura2.png",
+      array: [false,true,false,false,true]
+    },
+    {
+      src:  "/pappagalli/cappellopirata2.png",
+      array: [false,false,false,true,true]
+    },
+    {
+      src:  "/pappagalli/spada2.png",
+      array: [true,false,false,false,true]
+    },
+    {
+      src:  "/pappagalli/spada-bandana2.png",
+      array: [true,false,true,false,true]
+    },
+    {
+      src:  "/pappagalli/cintura-spada2.png",
+      array: [true,true,false,false,true]
+    },
+    {
+      src:  "/pappagalli/cintura-bandana2.png",
+      array: [false,true,true,false,true]
+    },
+    {
+      src:   "/pappagalli/spada-bandana2.png",
+      array: [true,false,true,false,true]
+    },
+    {
+      src:   "/pappagalli/spada-cintura-bandana2.png",
+      array: [true,true,true,false,true]
+    },
+    {
+      src:   "/pappagalli/spada-cappellopirata-cintura2.png",
+      array: [true,true,false,true,true]
+    },
+    {
+      src:   "/pappagalli/cappellopirata-cintura2.png",
+      array: [false,true,false,true,true]
+    },
+    {
+      src:  "/pappagalli/spada-cappellopirata2.png",
+      array: [true,false,false,true,true]
     }
+
   ];
 
   ngOnInit(): void {
@@ -88,12 +147,16 @@ export class CustomizeComponent implements OnInit {
         this.cappellopirata = !this.cappellopirata;
         if (this.cappellopirata) this.bandana = false;
         break;
+      case 'genere':
+        this.genere = !this.genere;
+        if (this.genere) this.genere = false;
+        break;
     }
     this.updateFoto();
   }
 
   updateFoto() {
-    const selectedItems = [this.spada, this.cintura, this.bandana, this.cappellopirata];
+    const selectedItems = [this.spada, this.cintura, this.bandana, this.cappellopirata, this.genere];
 
     this.fotos.forEach(foto => {
       if(this.compare(foto.array, selectedItems)) {
@@ -105,6 +168,7 @@ export class CustomizeComponent implements OnInit {
   compare(foto: boolean[], array: boolean[]): boolean {
     return foto.length === array.length && foto.every((val, index) => val === array[index]);
   }
+
 
 
   send(){
