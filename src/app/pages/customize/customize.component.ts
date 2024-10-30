@@ -149,7 +149,6 @@ export class CustomizeComponent implements OnInit {
         break;
       case 'genere':
         this.genere = !this.genere;
-        if (this.genere) this.genere = false;
         break;
     }
     this.updateFoto();
