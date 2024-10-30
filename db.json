@@ -67,6 +67,15 @@
       "username": "test-score5",
       "id": 16,
       "score": 6
+    },
+    {
+      "email": "giacominomainacazzodigioia@gmail.com",
+      "password": "$2a$10$aCqFp45Wel0kKCh5bwGKsOnG3ZwzCiHm/d/hSZGDTDlTuitzgRRXm",
+      "nome": "giacomino",
+      "cognome": "mainacazzodigioia",
+      "username": "giacominomainacazzodigioia@gmail.com",
+      "id": 17,
+      "score": 69
     }
   ]
 }
