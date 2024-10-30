@@ -11,6 +11,40 @@ img{
 .choice img{
   cursor: pointer;
 }
+.choice{
+  height: calc(100vh - 180px);
+  background-image: url("/pergamena.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+}
 button{
   width: 100%;
+}
+
+.elememts{
+  width: 100px ;
+}
+.element{
+  max-width: 160px ;
+}
+.pergamena{
+  padding-top: 25%;
+
+}
+.spada{
+  margin-left: 30%;
+  max-height: 170px;
+  width: auto;
+}
+.cappello{
+  margin-bottom: -6%;
+  margin-left: -30%;
+}
+.bandana{
+  margin-top: -5%;
+  margin-left: 39%;
+}
+.cintura{
+  margin-left: -12%;
+  margin-top: -5%;
 }

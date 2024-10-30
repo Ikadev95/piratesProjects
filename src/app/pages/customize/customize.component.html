@@ -1,27 +1,29 @@
 <div class="container py-5">
   <div class="row">
-    <div class="col-12 col-md-6 ">
+    <div class="col-12 col-md-5 ">
       <div class="img-container">
         <h2>Personalizza il tuo avatar!</h2>
         <img [src]="foto" alt="avatar pappagallo">
       </div>
       <button class="btn btn-primary" (click) = "send()" routerLink="/home">Personalizza</button>
     </div>
-    <div class="col-12 col-md-6 choice">
-      <div class="row">
-       <div class="col-6" (click)="toggleItem('spada')">
-        <img src="/pappagalli/elementi/spada.png">
+    <div class="col-12 col-md-7 choice">
+     <div class="pergamena">
+      <div class="row elements">
+        <div class="col-6 el" (click)="toggleItem('spada')">
+         <img class="element spada" src="/pappagalli/elementi/spada.png">
+        </div>
+        <div class="col-6 el"(click)="toggleItem('cappellopirata')">
+         <img class="element cappello" src="/pappagalli/elementi/cappello.png">
+        </div>
+        <div class="col-6 el"(click)="toggleItem('bandana')">
+         <img class="element bandana" src="/pappagalli/elementi/bandana.png">
+        </div>
+        <div class="col-6 el"(click)="toggleItem('cintura')">
+         <img class="element cintura" src="/pappagalli/elementi/cintura.png">
+        </div>
        </div>
-       <div class="col-6"(click)="toggleItem('cappellopirata')">
-        <img src="/pappagalli/elementi/cappello.png">
-       </div>
-       <div class="col-6"(click)="toggleItem('bandana')">
-        <img src="/pappagalli/elementi/bandana.png">
-       </div>
-       <div class="col-6"(click)="toggleItem('cintura')">
-        <img src="/pappagalli/elementi/cintura.png">
-       </div>
-      </div>
+     </div>
     </div>
   </div>
 </div>
