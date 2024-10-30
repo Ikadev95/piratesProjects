@@ -31,6 +31,33 @@
       "cognome": "Arzanese",
       "username": "Zanes",
       "id": 12
+    },
+    {
+      "email": "record@test.test",
+      "password": "$2a$10$CvWoyCbOuUQqmjo7wPjJaODFR2FtGeiHOIKOdiIxX/dUqVDUMSoQi",
+      "nome": "recordtest",
+      "cognome": "recordtest",
+      "username": "recordtest",
+      "id": 13,
+      "score": 108
+    },
+    {
+      "email": "score@test2",
+      "password": "$2a$10$GsrU7xtDlGYhARXEfm5bO.uiiBs8vCgqOUw7w5Ld9m1s6DmBt/sTi",
+      "nome": "scoretest2",
+      "cognome": "scoretest2",
+      "username": "scoretest2",
+      "id": 14,
+      "score": 108
+    },
+    {
+      "email": "test@score3",
+      "password": "$2a$10$FlIpVVT5YpUeAou2w7AYJebFdasOOXsKJB05a/nllXHo07g.jF1Nm",
+      "nome": "test-score3",
+      "cognome": "test-score3",
+      "username": "test-score3",
+      "id": 15,
+      "score": 108
     }
   ]
 }

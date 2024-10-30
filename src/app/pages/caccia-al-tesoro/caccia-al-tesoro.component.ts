@@ -1,4 +1,7 @@
+import { CacciaAlTesoroService } from './../../services/caccia-al-tesoro.service';
 import { Component } from '@angular/core';
+import { AuthService } from '../../services/auth.service';
+import { iUser } from '../../interfaces/i-user';
 
 @Component({
   selector: 'app-caccia-al-tesoro',
@@ -17,10 +20,27 @@ export class CacciaAlTesoroComponent {
   finegioco: boolean = false;
   contaclick: number = 0;
   punteggio: number = 116;
+  users!: iUser[];
+  user!: iUser;
+  isRecord: boolean = false;
 
-  constructor() {}
+  constructor(
+    private authServ: AuthService,
+    private cacciaServ: CacciaAlTesoroService
+  ) {
+    this.getAllUsers();
+    this.authServ.user$.subscribe((user) => {
+      if (user) {
+        this.user = user;
+      }
+    });
+    console.log('user', this.user);
+    setTimeout(() => console.log('userArray', this.users), 2000);
+  }
 
-  ngOnInit() {}
+  ngOnInit() {
+    console.log(this.user);
+  }
 
   incrementaClick() {
     this.contaclick++;
@@ -98,8 +118,14 @@ export class CacciaAlTesoroComponent {
     this.incrementaClick();
     if (this.indizio7) {
       this.indizio8 = true;
-      this.finegioco = true;
       this.punteggio -= this.contaclick;
+      this.user.score = this.punteggio;
+      if (this.user.id) {
+        this.addScoreAtUser(this.user.id, this.user.score);
+      }
+      setTimeout(this.waitPatch, 2000);
+
+      console.log(this.user);
     } else {
       this.indizio1 = false;
       this.indizio2 = false;
@@ -108,5 +134,24 @@ export class CacciaAlTesoroComponent {
       this.indizio5 = false;
       this.indizio6 = false;
     }
+  }
+
+  getAllUsers() {
+    this.cacciaServ.getAllUser().subscribe((user) => (this.users = user));
+  }
+
+  addScoreAtUser(id: number, score: number) {
+    this.cacciaServ.addScoreAtUser(id, score).subscribe();
+  }
+
+  waitPatch() {
+    this.finegioco = true;
+    if (this.user.score) {
+      if (this.punteggio > this.user.score) {
+        this.isRecord = true;
+      }
+    }
+    this.user.score = this.punteggio;
+    return this.user.score;
   }
 }

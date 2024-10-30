@@ -53,6 +53,8 @@
 </div>
 <h3 *ngIf="finegioco" class="text-center text-warning">
   hai trovato il tesoro
-
-  <h3>il tuo punteggio è {{ punteggio }}</h3>
+  <div>
+    <h1 *ngIf="isRecord" class="text-center text-warning">NUOVO RECORD</h1>
+    <h3>il tuo punteggio è {{ punteggio }}</h3>
+  </div>
 </h3>
