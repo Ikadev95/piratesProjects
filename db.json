@@ -35,6 +35,15 @@
       "username": "ika",
       "score": 106,
       "id": 16
+    },
+    {
+      "email": "gianmarco@pirata.it",
+      "password": "$2a$10$26I0pqbZSlDvCDPReeoIuOtZh/x/PXoCpG..Q3i9F183fMpTItvGK",
+      "nome": "Gianmarco",
+      "cognome": "Arzanese",
+      "username": "Zanes",
+      "score": 108,
+      "id": 17
     }
   ]
 }

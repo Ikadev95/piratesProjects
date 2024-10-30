@@ -1,53 +1,554 @@
-<div class="container">
-  <div class="row">
+<div class="container p-5">
+  <div class="row text-center d-flex">
+    <img src="octopus.png" class="position-absolute w-75" alt="" />
+    <!-- =======bottone da aggiungere -->
+
     <div
+      class="button_buttonWrapper__Z0lN_ col-12 col-md-4"
       (click)="primostep()"
-      class="col-12 col-md-4 border border-3 border-dark"
     >
-      <p>start</p>
-      <p *ngIf="indizio1">primo indizio</p>
+      <button class="button-13" role="button">
+        <span class="text">START</span>
+        <br />
+        <span class="text" *ngIf="indizio1"
+          >Arr! Qui si trovano i dobloni! Clicca sulla casella dorata!
+        </span>
+        <span class="button-13-background"></span>
+        <span class="button-13-border"></span>
+
+        <svg style="position: absolute" width="0" height="0">
+          <filter
+            id="remove-black-button-13"
+            color-interpolation-filters="sRGB"
+          >
+            <feColorMatrix
+              type="matrix"
+              values="1 0 0 0 0
+                    0 1 0 0 0
+                    0 0 1 0 0
+                    -1 -1 -1 0 1"
+              result="black-pixels"
+            ></feColorMatrix>
+            <feComposite
+              in="SourceGraphic"
+              in2="black-pixels"
+              operator="out"
+            ></feComposite>
+          </filter>
+        </svg>
+      </button>
     </div>
+    <!-- 2 bottone  -->
     <div
+      class="button_buttonWrapper__Z0lN_ col-12 col-md-4"
       (click)="ottimostep()"
-      class="col-12 col-md-4 border border-3 border-dark"
     >
-      <p *ngIf="indizio8">secondo indizio</p>
+      <button class="button-13" role="button">
+        <span class="text">START</span>
+        <br />
+        <span class="text" *ngIf="indizio8"
+          >Arr! Qui si trovano i dobloni! Clicca sulla casella dorata!</span
+        >
+        <span class="button-13-background"></span>
+        <span class="button-13-border"></span>
+
+        <svg style="position: absolute" width="0" height="0">
+          <filter
+            id="remove-black-button-13"
+            color-interpolation-filters="sRGB"
+          >
+            <feColorMatrix
+              type="matrix"
+              values="1 0 0 0 0
+                  0 1 0 0 0
+                  0 0 1 0 0
+                  -1 -1 -1 0 1"
+              result="black-pixels"
+            ></feColorMatrix>
+            <feComposite
+              in="SourceGraphic"
+              in2="black-pixels"
+              operator="out"
+            ></feComposite>
+          </filter>
+        </svg>
+      </button>
     </div>
+    <!-- 3 bottone  -->
     <div
+      class="button_buttonWrapper__Z0lN_ col-12 col-md-4"
       (click)="quintostep()"
-      class="col-12 col-md-4 border border-3 border-dark"
     >
-      <p *ngIf="indizio5">terzo indizio</p>
+      <button class="button-13" role="button">
+        <span class="text">START</span>
+        <br />
+        <span class="text" *ngIf="indizio5">terzo indizio </span>
+        <span class="button-13-background"></span>
+        <span class="button-13-border"></span>
+
+        <svg style="position: absolute" width="0" height="0">
+          <filter
+            id="remove-black-button-13"
+            color-interpolation-filters="sRGB"
+          >
+            <feColorMatrix
+              type="matrix"
+              values="1 0 0 0 0
+                0 1 0 0 0
+                0 0 1 0 0
+                -1 -1 -1 0 1"
+              result="black-pixels"
+            ></feColorMatrix>
+            <feComposite
+              in="SourceGraphic"
+              in2="black-pixels"
+              operator="out"
+            ></feComposite>
+          </filter>
+        </svg>
+      </button>
     </div>
+    <!-- 4 bottone -->
     <div
+      class="button_buttonWrapper__Z0lN_ col-12 col-md-4"
       (click)="terzostep()"
-      class="col-12 col-md-4 border border-3 border-dark"
     >
-      <p *ngIf="indizio3">ultimo indizio</p>
+      <button class="button-13" role="button">
+        <span class="text">START</span>
+        <br />
+        <span class="text" *ngIf="indizio3">terzo indizio </span>
+        <span class="button-13-background"></span>
+        <span class="button-13-border"></span>
+
+        <svg style="position: absolute" width="0" height="0">
+          <filter
+            id="remove-black-button-13"
+            color-interpolation-filters="sRGB"
+          >
+            <feColorMatrix
+              type="matrix"
+              values="1 0 0 0 0
+              0 1 0 0 0
+              0 0 1 0 0
+              -1 -1 -1 0 1"
+              result="black-pixels"
+            ></feColorMatrix>
+            <feComposite
+              in="SourceGraphic"
+              in2="black-pixels"
+              operator="out"
+            ></feComposite>
+          </filter>
+        </svg>
+      </button>
     </div>
+    <!-- 5 bottone -->
     <div
+      class="button_buttonWrapper__Z0lN_ col-12 col-md-4"
       (click)="secondostep()"
-      class="col-12 col-md-4 border border-3 border-dark"
     >
-      <p *ngIf="indizio2">primo indizio</p>
+      <button class="button-13" role="button">
+        <span class="text">START</span>
+        <br />
+        <span class="text" *ngIf="indizio2">terzo indizio </span>
+        <span class="button-13-background"></span>
+        <span class="button-13-border"></span>
+
+        <svg style="position: absolute" width="0" height="0">
+          <filter
+            id="remove-black-button-13"
+            color-interpolation-filters="sRGB"
+          >
+            <feColorMatrix
+              type="matrix"
+              values="1 0 0 0 0
+            0 1 0 0 0
+            0 0 1 0 0
+            -1 -1 -1 0 1"
+              result="black-pixels"
+            ></feColorMatrix>
+            <feComposite
+              in="SourceGraphic"
+              in2="black-pixels"
+              operator="out"
+            ></feComposite>
+          </filter>
+        </svg>
+      </button>
     </div>
+    <!-- 6 bottone -->
     <div
+      class="button_buttonWrapper__Z0lN_ col-12 col-md-4"
       (click)="quartostep()"
-      class="col-12 col-md-4 border border-3 border-dark"
     >
-      <p *ngIf="indizio4">secondo indizio</p>
+      <button class="button-13" role="button">
+        <span class="text">START</span>
+        <br />
+        <span class="text" *ngIf="indizio4">terzo indizio </span>
+        <span class="button-13-background"></span>
+        <span class="button-13-border"></span>
+
+        <svg style="position: absolute" width="0" height="0">
+          <filter
+            id="remove-black-button-13"
+            color-interpolation-filters="sRGB"
+          >
+            <feColorMatrix
+              type="matrix"
+              values="1 0 0 0 0
+      0 1 0 0 0
+      0 0 1 0 0
+      -1 -1 -1 0 1"
+              result="black-pixels"
+            ></feColorMatrix>
+            <feComposite
+              in="SourceGraphic"
+              in2="black-pixels"
+              operator="out"
+            ></feComposite>
+          </filter>
+        </svg>
+      </button>
     </div>
+    <!-- 7 bottone -->
     <div
+      class="button_buttonWrapper__Z0lN_ col-12 col-md-4"
       (click)="sestostep()"
-      class="col-12 col-md-4 border border-3 border-dark"
     >
-      <p *ngIf="indizio6">terzo indizio</p>
+      <button class="button-13" role="button">
+        <span class="text">START</span>
+        <br />
+        <span class="text" *ngIf="indizio6">terzo indizio </span>
+        <span class="button-13-background"></span>
+        <span class="button-13-border"></span>
+
+        <svg style="position: absolute" width="0" height="0">
+          <filter
+            id="remove-black-button-13"
+            color-interpolation-filters="sRGB"
+          >
+            <feColorMatrix
+              type="matrix"
+              values="1 0 0 0 0
+    0 1 0 0 0
+    0 0 1 0 0
+    -1 -1 -1 0 1"
+              result="black-pixels"
+            ></feColorMatrix>
+            <feComposite
+              in="SourceGraphic"
+              in2="black-pixels"
+              operator="out"
+            ></feComposite>
+          </filter>
+        </svg>
+      </button>
     </div>
+    <!-- 8 bottone -->
     <div
+      class="button_buttonWrapper__Z0lN_ col-12 col-md-4"
       (click)="settimostep()"
-      class="col-12 col-md-4 border border-3 border-dark"
     >
-      <p *ngIf="indizio7">ultimo indizio</p>
+      <button class="button-13" role="button">
+        <span class="text">START</span>
+        <br />
+        <span class="text" *ngIf="indizio7">terzo indizio </span>
+        <span class="button-13-background"></span>
+        <span class="button-13-border"></span>
+
+        <svg style="position: absolute" width="0" height="0">
+          <filter
+            id="remove-black-button-13"
+            color-interpolation-filters="sRGB"
+          >
+            <feColorMatrix
+              type="matrix"
+              values="1 0 0 0 0
+  0 1 0 0 0
+  0 0 1 0 0
+  -1 -1 -1 0 1"
+              result="black-pixels"
+            ></feColorMatrix>
+            <feComposite
+              in="SourceGraphic"
+              in2="black-pixels"
+              operator="out"
+            ></feComposite>
+          </filter>
+        </svg>
+      </button>
+    </div>
+    <!-- 9 bottone -->
+    <div
+      class="button_buttonWrapper__Z0lN_ col-12 col-md-4"
+      (click)="settimostep()"
+    >
+      <button class="button-13" role="button">
+        <span class="text">START</span>
+        <br />
+        <span class="text" *ngIf="indizio7">terzo indizio </span>
+        <span class="button-13-background"></span>
+        <span class="button-13-border"></span>
+
+        <svg style="position: absolute" width="0" height="0">
+          <filter
+            id="remove-black-button-13"
+            color-interpolation-filters="sRGB"
+          >
+            <feColorMatrix
+              type="matrix"
+              values="1 0 0 0 0
+0 1 0 0 0
+0 0 1 0 0
+-1 -1 -1 0 1"
+              result="black-pixels"
+            ></feColorMatrix>
+            <feComposite
+              in="SourceGraphic"
+              in2="black-pixels"
+              operator="out"
+            ></feComposite>
+          </filter>
+        </svg>
+      </button>
+    </div>
+    <!-- 10 bottone -->
+    <div
+      class="button_buttonWrapper__Z0lN_ col-12 col-md-4"
+      (click)="settimostep()"
+    >
+      <button class="button-13" role="button">
+        <span class="text">START</span>
+        <br />
+        <span class="text" *ngIf="indizio7">terzo indizio </span>
+        <span class="button-13-background"></span>
+        <span class="button-13-border"></span>
+
+        <svg style="position: absolute" width="0" height="0">
+          <filter
+            id="remove-black-button-13"
+            color-interpolation-filters="sRGB"
+          >
+            <feColorMatrix
+              type="matrix"
+              values="1 0 0 0 0
+0 1 0 0 0
+0 0 1 0 0
+-1 -1 -1 0 1"
+              result="black-pixels"
+            ></feColorMatrix>
+            <feComposite
+              in="SourceGraphic"
+              in2="black-pixels"
+              operator="out"
+            ></feComposite>
+          </filter>
+        </svg>
+      </button>
+    </div>
+    <!-- 11 bottone -->
+    <div
+      class="button_buttonWrapper__Z0lN_ col-12 col-md-4"
+      (click)="settimostep()"
+    >
+      <button class="button-13" role="button">
+        <span class="text">START</span>
+        <br />
+        <span class="text" *ngIf="indizio7">terzo indizio </span>
+        <span class="button-13-background"></span>
+        <span class="button-13-border"></span>
+
+        <svg style="position: absolute" width="0" height="0">
+          <filter
+            id="remove-black-button-13"
+            color-interpolation-filters="sRGB"
+          >
+            <feColorMatrix
+              type="matrix"
+              values="1 0 0 0 0
+0 1 0 0 0
+0 0 1 0 0
+-1 -1 -1 0 1"
+              result="black-pixels"
+            ></feColorMatrix>
+            <feComposite
+              in="SourceGraphic"
+              in2="black-pixels"
+              operator="out"
+            ></feComposite>
+          </filter>
+        </svg>
+      </button>
+    </div>
+    <!-- 12 bottone -->
+    <div
+      class="button_buttonWrapper__Z0lN_ col-12 col-md-4"
+      (click)="settimostep()"
+    >
+      <button class="button-13" role="button">
+        <span class="text">START</span>
+        <br />
+        <span class="text" *ngIf="indizio7">terzo indizio </span>
+        <span class="button-13-background"></span>
+        <span class="button-13-border"></span>
+
+        <svg style="position: absolute" width="0" height="0">
+          <filter
+            id="remove-black-button-13"
+            color-interpolation-filters="sRGB"
+          >
+            <feColorMatrix
+              type="matrix"
+              values="1 0 0 0 0
+0 1 0 0 0
+0 0 1 0 0
+-1 -1 -1 0 1"
+              result="black-pixels"
+            ></feColorMatrix>
+            <feComposite
+              in="SourceGraphic"
+              in2="black-pixels"
+              operator="out"
+            ></feComposite>
+          </filter>
+        </svg>
+      </button>
+    </div>
+    <!-- 13 bottone -->
+    <div
+      class="button_buttonWrapper__Z0lN_ col-12 col-md-4"
+      (click)="settimostep()"
+    >
+      <button class="button-13" role="button">
+        <span class="text">START</span>
+        <br />
+        <span class="text" *ngIf="indizio7">terzo indizio </span>
+        <span class="button-13-background"></span>
+        <span class="button-13-border"></span>
+
+        <svg style="position: absolute" width="0" height="0">
+          <filter
+            id="remove-black-button-13"
+            color-interpolation-filters="sRGB"
+          >
+            <feColorMatrix
+              type="matrix"
+              values="1 0 0 0 0
+0 1 0 0 0
+0 0 1 0 0
+-1 -1 -1 0 1"
+              result="black-pixels"
+            ></feColorMatrix>
+            <feComposite
+              in="SourceGraphic"
+              in2="black-pixels"
+              operator="out"
+            ></feComposite>
+          </filter>
+        </svg>
+      </button>
+    </div>
+    <!-- 14 bottone -->
+    <div
+      class="button_buttonWrapper__Z0lN_ col-12 col-md-4"
+      (click)="settimostep()"
+    >
+      <button class="button-13" role="button">
+        <span class="text">START</span>
+        <br />
+        <span class="text" *ngIf="indizio7">terzo indizio </span>
+        <span class="button-13-background"></span>
+        <span class="button-13-border"></span>
+
+        <svg style="position: absolute" width="0" height="0">
+          <filter
+            id="remove-black-button-13"
+            color-interpolation-filters="sRGB"
+          >
+            <feColorMatrix
+              type="matrix"
+              values="1 0 0 0 0
+0 1 0 0 0
+0 0 1 0 0
+-1 -1 -1 0 1"
+              result="black-pixels"
+            ></feColorMatrix>
+            <feComposite
+              in="SourceGraphic"
+              in2="black-pixels"
+              operator="out"
+            ></feComposite>
+          </filter>
+        </svg>
+      </button>
+    </div>
+    <!-- 15 bottone -->
+    <div
+      class="button_buttonWrapper__Z0lN_ col-12 col-md-4"
+      (click)="settimostep()"
+    >
+      <button class="button-13" role="button">
+        <span class="text">START</span>
+        <br />
+        <span class="text" *ngIf="indizio7">terzo indizio </span>
+        <span class="button-13-background"></span>
+        <span class="button-13-border"></span>
+
+        <svg style="position: absolute" width="0" height="0">
+          <filter
+            id="remove-black-button-13"
+            color-interpolation-filters="sRGB"
+          >
+            <feColorMatrix
+              type="matrix"
+              values="1 0 0 0 0
+0 1 0 0 0
+0 0 1 0 0
+-1 -1 -1 0 1"
+              result="black-pixels"
+            ></feColorMatrix>
+            <feComposite
+              in="SourceGraphic"
+              in2="black-pixels"
+              operator="out"
+            ></feComposite>
+          </filter>
+        </svg>
+      </button>
+    </div>
+    <!-- 16 bottone -->
+    <div
+      class="button_buttonWrapper__Z0lN_ col-12 col-md-4"
+      (click)="settimostep()"
+    >
+      <button class="button-13" role="button">
+        <span class="text">START</span>
+        <br />
+        <span class="text" *ngIf="indizio7">terzo indizio </span>
+        <span class="button-13-background"></span>
+        <span class="button-13-border"></span>
+
+        <svg style="position: absolute" width="0" height="0">
+          <filter
+            id="remove-black-button-13"
+            color-interpolation-filters="sRGB"
+          >
+            <feColorMatrix
+              type="matrix"
+              values="1 0 0 0 0
+0 1 0 0 0
+0 0 1 0 0
+-1 -1 -1 0 1"
+              result="black-pixels"
+            ></feColorMatrix>
+            <feComposite
+              in="SourceGraphic"
+              in2="black-pixels"
+              operator="out"
+            ></feComposite>
+          </filter>
+        </svg>
+      </button>
     </div>
   </div>
 </div>
