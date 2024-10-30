@@ -83,4 +83,16 @@ export class AuthService {
 
     this.authSubject$.next(accessData);
   }
+
+  updateUserScore(updatedUser: iUser) {
+    const currentAccessData = this.authSubject$.value;
+    if (currentAccessData) {
+      const updatedAccessData = {
+        ...currentAccessData,
+        user: updatedUser,
+      };
+      this.authSubject$.next(updatedAccessData);
+      localStorage.setItem('accessData', JSON.stringify(updatedAccessData));
+    }
+  }
 }

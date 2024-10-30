@@ -130,7 +130,6 @@ export class CacciaAlTesoroComponent {
       this.indizio6 = false;
     }
   }
-
   addScoreAtUser(id: number, scoreValue: number, punteggio: number) {
     console.log(scoreValue);
 
@@ -141,10 +140,18 @@ export class CacciaAlTesoroComponent {
       const headers = { 'Content-Type': 'application/json' };
       scoreValue = punteggio;
       console.log(scoreValue);
+
       return this.http
-        .patch(`${this.userUrl}/${id}`, { score: scoreValue }, { headers })
+        .patch<iUser>(
+          `${this.userUrl}/${id}`,
+          { score: scoreValue },
+          { headers }
+        )
         .subscribe({
-          next: (response) => console.log('Patch successful:', response),
+          next: (updatedUser) => {
+            console.log('Patch successful:', updatedUser);
+            this.authServ.updateUserScore(updatedUser);
+          },
           error: (error) => console.error('Error during patch:', error),
         });
     } else {
