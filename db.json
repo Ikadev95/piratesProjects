@@ -1,36 +1,40 @@
 {
   "users": [
     {
-      "email": "prova1@prova",
-      "password": "$2a$10$HzQOFAtE79B2wXCCK7jzCu0FHtH/lI4.gna.tiKnZAwFyX1krT3S.",
-      "nome": "prova1",
-      "cognome": "prova1",
-      "username": "provanumberone",
-      "id": 9
+      "email": "test@score",
+      "password": "$2a$10$3Npgd5K5xOLWN2A15DKVRuSQb9CfSfhaL2X5D3SC2Gq81Ta5b2nlS",
+      "nome": "test-score",
+      "cognome": "test-score",
+      "username": "test-score",
+      "id": 13,
+      "score": 0
+    },
+    {
+      "email": "prova@test8",
+      "password": "$2a$10$QGtlCl1eIOapfmgiSO0fJOYGIkvYDRlDFBc7x6EiI0ytH5sSZntPu",
+      "nome": "prova-test8",
+      "cognome": "prova-test8",
+      "username": "prova-test8",
+      "score": 0,
+      "id": 14
     },
     {
       "email": "fegughi@gmail.com",
-      "password": "$2a$10$f8xs8hyXsEdQRP5ZWLwBfuqoPRZnsPhREWlgtIGt56OyNgQzvP.Na",
+      "password": "$2a$10$DFMoHrAwDD1VYY/rDyO6AeExQni4JVRq/ppBbxClFM2oqHu2ebAN.",
       "nome": "Federica",
       "cognome": "Guglielmo",
       "username": "federika",
-      "id": 10
+      "score": 108,
+      "id": 15
     },
     {
-      "email": "federico.peralta@hotmail.it",
-      "password": "$2a$10$FmCc4puN5q/ogkQ0jREvWOgQfUi0ztwBnRtlA/.Gzn4oPigABqOQO",
-      "nome": "Federico",
-      "cognome": "Peralta",
-      "username": "Fedepera",
-      "id": 11
-    },
-    {
-      "email": "gianmarco@pirata.it",
-      "password": "$2a$10$L.D76hfz.jwRFDOc.srbTu0cZ8X9CFk1/aK6hT58qNJiijgS.lBia",
-      "nome": "Gianmarco",
-      "cognome": "Arzanese",
-      "username": "Zanes",
-      "id": 12
+      "email": "prova@gmail.com",
+      "password": "$2a$10$M39QmUmj0FgJiemzK7oR2eD/ZrC9RLxQbgJSJIwnKZDlmFgppH2kW",
+      "nome": "ika",
+      "cognome": "gu",
+      "username": "ika",
+      "score": 106,
+      "id": 16
     }
   ]
 }

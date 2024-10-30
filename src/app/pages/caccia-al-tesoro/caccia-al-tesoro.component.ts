@@ -1,4 +1,8 @@
 import { Component } from '@angular/core';
+import { AuthService } from '../../services/auth.service';
+import { iUser } from '../../interfaces/i-user';
+import { HttpClient } from '@angular/common/http';
+import { environment } from '../../../environments/environment.development';
 
 @Component({
   selector: 'app-caccia-al-tesoro',
@@ -17,10 +21,21 @@ export class CacciaAlTesoroComponent {
   finegioco: boolean = false;
   contaclick: number = 0;
   punteggio: number = 116;
+  user!: iUser;
+  userUrl: string = environment.userUrl;
+  isRecord: boolean = false;
 
-  constructor() {}
+  constructor(private authServ: AuthService, private http: HttpClient) {
+    this.authServ.user$.subscribe((user) => {
+      if (user) {
+        this.user = user;
+      }
+    });
+  }
 
-  ngOnInit() {}
+  ngOnInit() {
+    setTimeout(() => console.log(this.user), 2000);
+  }
 
   incrementaClick() {
     this.contaclick++;
@@ -100,6 +115,12 @@ export class CacciaAlTesoroComponent {
       this.indizio8 = true;
       this.finegioco = true;
       this.punteggio -= this.contaclick;
+      if (this.user.id) {
+        this.addScoreAtUser(this.user.id, this.user.score, this.punteggio);
+
+        console.log('punteggio', this.punteggio);
+        console.log('score', this.user.score);
+      }
     } else {
       this.indizio1 = false;
       this.indizio2 = false;
@@ -107,6 +128,27 @@ export class CacciaAlTesoroComponent {
       this.indizio4 = false;
       this.indizio5 = false;
       this.indizio6 = false;
+    }
+  }
+
+  addScoreAtUser(id: number, scoreValue: number, punteggio: number) {
+    console.log(scoreValue);
+
+    if (punteggio > scoreValue) {
+      console.log('user.score', this.user.score);
+      this.isRecord = true;
+
+      const headers = { 'Content-Type': 'application/json' };
+      scoreValue = punteggio
+      console.log(scoreValue);
+      return this.http
+        .patch(`${this.userUrl}/${id}`, { score: scoreValue }, { headers })
+        .subscribe({
+          next: (response) => console.log('Patch successful:', response),
+          error: (error) => console.error('Error during patch:', error)
+        });
+    } else {
+      return this.user;
     }
   }
 }

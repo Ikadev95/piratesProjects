@@ -5,4 +5,5 @@ export interface iUser {
   email: string;
   password: string;
   id?: number;
+  score: number;
 }

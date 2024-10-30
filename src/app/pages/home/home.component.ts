@@ -22,6 +22,8 @@ export class HomeComponent {
     this.authServ.user$.subscribe(
       user => {if (user) {this.user = user}}
     )
+
+    console.log(this.user)
   }
 
   setupAutoLogout() {
