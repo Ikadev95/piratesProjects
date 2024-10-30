@@ -79,6 +79,7 @@ export class RegisterComponent {
         email: this.form.get('email')?.value,
         username: this.form.get('username')?.value,
         password: this.form.get('psw')?.value,
+        score: 0,
       };
 
       this.authServ.register(user).subscribe(

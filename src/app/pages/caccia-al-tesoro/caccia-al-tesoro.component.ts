@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { AuthService } from '../../services/auth.service';
-import { CacciaAlTesoroService } from '../../services/caccia-al-tesoro.service';
 import { iUser } from '../../interfaces/i-user';
 import { HttpClient } from '@angular/common/http';
 import { environment } from '../../../environments/environment.development';
@@ -24,7 +23,6 @@ export class CacciaAlTesoroComponent {
   punteggio: number = 116;
   user!: iUser;
   userUrl: string = environment.userUrl;
-  scoreValue: number = 0;
   isRecord: boolean = false;
 
   constructor(private authServ: AuthService, private http: HttpClient) {
@@ -32,7 +30,6 @@ export class CacciaAlTesoroComponent {
       if (user) {
         this.user = user;
       }
-      this.user.score = 0;
     });
   }
 
@@ -119,11 +116,10 @@ export class CacciaAlTesoroComponent {
       this.finegioco = true;
       this.punteggio -= this.contaclick;
       if (this.user.id) {
-        this.addScoreAtUser(this.user.id, this.scoreValue, this.punteggio);
-        this.scoreValue = this.punteggio;
+        this.addScoreAtUser(this.user.id, this.user.score, this.punteggio);
 
         console.log('punteggio', this.punteggio);
-        console.log('score', this.scoreValue);
+        console.log('score', this.user.score);
       }
     } else {
       this.indizio1 = false;
@@ -136,6 +132,8 @@ export class CacciaAlTesoroComponent {
   }
 
   addScoreAtUser(id: number, scoreValue: number, punteggio: number) {
+    scoreValue = this.punteggio;
+
     if (punteggio > scoreValue) {
       console.log('user.score', this.user.score);
       this.isRecord = true;
