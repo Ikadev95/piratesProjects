@@ -6,7 +6,7 @@ import { iUser } from '../../interfaces/i-user';
 @Component({
   selector: 'app-caccia-al-tesoro',
   templateUrl: './caccia-al-tesoro.component.html',
-  styleUrl: './caccia-al-tesoro.component.scss',
+  styleUrls: ['./caccia-al-tesoro.component.scss'],
 })
 export class CacciaAlTesoroComponent {
   indizio1: boolean = false;
@@ -23,135 +23,159 @@ export class CacciaAlTesoroComponent {
   users!: iUser[];
   user!: iUser;
   isRecord: boolean = false;
+  punteggioInizializzato: boolean = false;
 
   constructor(
     private authServ: AuthService,
     private cacciaServ: CacciaAlTesoroService
   ) {
     this.getAllUsers();
+
     this.authServ.user$.subscribe((user) => {
       if (user) {
         this.user = user;
+        this.punteggioInizializzato = true;
+        console.log(
+          'Utente loggato caricato e punteggio inizializzato:',
+          this.user
+        );
       }
     });
-    console.log('user', this.user);
-    setTimeout(() => console.log('userArray', this.users), 2000);
+    setTimeout(() => console.log('Lista utenti caricata:', this.users), 2000);
   }
 
   ngOnInit() {
-    console.log(this.user);
+    console.log('ngOnInit: Utente corrente:', this.user);
   }
 
   incrementaClick() {
     this.contaclick++;
-    console.log(this.contaclick);
+    console.log('Click incrementato:', this.contaclick);
   }
 
-  primostep() {
+  async verificaInizializzazione() {
+    while (!this.punteggioInizializzato) {
+      await new Promise((resolve) => setTimeout(resolve, 100));
+    }
+  }
+
+  async primostep() {
+    await this.verificaInizializzazione();
     this.incrementaClick();
     this.indizio1 = true;
+    console.log('Primo step completato');
   }
 
-  secondostep() {
+  async secondostep() {
+    await this.verificaInizializzazione();
     this.incrementaClick();
     if (this.indizio1) {
       this.indizio2 = true;
+      console.log('Secondo step completato');
     }
   }
 
-  terzostep() {
+  async terzostep() {
+    await this.verificaInizializzazione();
     this.incrementaClick();
     if (this.indizio2) {
       this.indizio3 = true;
+      console.log('Terzo step completato');
     } else {
       this.indizio1 = false;
+      console.log('Errore: indizio1 non era vero, resetta indizi');
     }
   }
 
-  quartostep() {
+  async quartostep() {
+    await this.verificaInizializzazione();
     this.incrementaClick();
     if (this.indizio3) {
       this.indizio4 = true;
+      console.log('Quarto step completato');
     } else {
       this.indizio1 = false;
       this.indizio2 = false;
+      console.log('Errore: indizio3 non era vero, resetta indizi');
     }
   }
 
-  quintostep() {
+  async quintostep() {
+    await this.verificaInizializzazione();
     this.incrementaClick();
     if (this.indizio4) {
       this.indizio5 = true;
+      console.log('Quinto step completato');
     } else {
-      this.indizio1 = false;
-      this.indizio2 = false;
-      this.indizio3 = false;
+      this.indizio1 = this.indizio2 = this.indizio3 = false;
+      console.log('Errore: indizio4 non era vero, resetta indizi');
     }
   }
 
-  sestostep() {
+  async sestostep() {
+    await this.verificaInizializzazione();
     this.incrementaClick();
     if (this.indizio5) {
       this.indizio6 = true;
+      console.log('Sesto step completato');
     } else {
-      this.indizio1 = false;
-      this.indizio2 = false;
-      this.indizio3 = false;
-      this.indizio4 = false;
+      this.indizio1 = this.indizio2 = this.indizio3 = this.indizio4 = false;
+      console.log('Errore: indizio5 non era vero, resetta indizi');
     }
   }
 
-  settimostep() {
+  async settimostep() {
+    await this.verificaInizializzazione();
     this.incrementaClick();
     if (this.indizio6) {
       this.indizio7 = true;
+      console.log('Settimo step completato');
     } else {
-      this.indizio1 = false;
-      this.indizio2 = false;
-      this.indizio3 = false;
-      this.indizio4 = false;
+      this.indizio1 = this.indizio2 = this.indizio3 = this.indizio4 = false;
       this.indizio5 = false;
+      console.log('Errore: indizio6 non era vero, resetta indizi');
     }
   }
 
-  ottimostep() {
+  async ottimostep() {
+    await this.verificaInizializzazione();
     this.incrementaClick();
     if (this.indizio7) {
       this.indizio8 = true;
       this.punteggio -= this.contaclick;
-      this.user.score = this.punteggio;
-      if (this.user.id) {
-        this.addScoreAtUser(this.user.id, this.user.score);
-      }
-      setTimeout(this.waitPatch, 2000);
+      console.log('Ottavo step completato, punteggio attuale:', this.punteggio);
 
-      console.log(this.user);
+      if (
+        this.user.id &&
+        (!this.user.score || this.punteggio > this.user.score)
+      ) {
+        if (this.user.score) {
+          this.addScoreAtUser(this.user.id, this.punteggio, this.user.score);
+        } else {
+          this.addScoreAtUser(this.user.id, this.punteggio, 0);
+        }
+        this.isRecord = true;
+        console.log('Nuovo record impostato:', this.isRecord);
+      } else {
+        this.isRecord = false;
+        console.log('Nessun nuovo record');
+      }
+
+      this.finegioco = true;
+      console.log('Gioco terminato, punteggio finale:', this.punteggio);
     } else {
-      this.indizio1 = false;
-      this.indizio2 = false;
-      this.indizio3 = false;
-      this.indizio4 = false;
-      this.indizio5 = false;
-      this.indizio6 = false;
+      this.indizio1 = this.indizio2 = this.indizio3 = this.indizio4 = false;
+      this.indizio5 = this.indizio6 = this.indizio7 = false;
+      console.log('Errore: indizio7 non era vero, resetta indizi');
     }
   }
+
+  addScoreAtUser(id: number, score: number, punteggio: number) {}
 
   getAllUsers() {
-    this.cacciaServ.getAllUser().subscribe((user) => (this.users = user));
-  }
-
-  addScoreAtUser(id: number, score: number) {
-    this.cacciaServ.addScoreAtUser(id, score).subscribe();
-  }
-
-  waitPatch() {
-    this.finegioco = true;
-    if (this.user.score) {
-      if (this.punteggio > this.user.score) {
-        this.isRecord = true;
-      }
-    }
-    this.user.score = this.punteggio;
-    return this.user.score;
+    this.cacciaServ.getAllUser().subscribe((user) => {
+      this.users = user;
+      console.log('Utenti caricati dal server:', this.users);
+    });
   }
 }
