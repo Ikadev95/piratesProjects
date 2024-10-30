@@ -87,6 +87,7 @@
 
 .button-container {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   padding: 20px;
   perspective: 1000px;

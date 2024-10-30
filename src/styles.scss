@@ -23,3 +23,11 @@ h1 {
 
 /* Importing Bootstrap SCSS file. */
 @import "bootstrap/scss/bootstrap";
+
+.btn{
+  background-color: #0c2845;
+  border: 3px solid #2ba3a8;
+  font-family: "Pirata One", sans-serif;
+  color: white;
+  font-size: 20px;
+}
