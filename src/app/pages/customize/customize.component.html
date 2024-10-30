@@ -8,22 +8,24 @@
       <button class="btn btn-primary" (click) = "send()" routerLink="/home">Personalizza</button>
     </div>
     <div class="col-12 col-md-7 choice">
-     <div class="pergamena">
-      <div class="row elements">
-        <div class="col-6 el" (click)="toggleItem('spada')">
-         <img class="element spada" src="/pappagalli/elementi/spada.png">
-        </div>
-        <div class="col-6 el"(click)="toggleItem('cappellopirata')">
-         <img class="element cappello" src="/pappagalli/elementi/cappello.png">
-        </div>
-        <div class="col-6 el"(click)="toggleItem('bandana')">
-         <img class="element bandana" src="/pappagalli/elementi/bandana.png">
-        </div>
-        <div class="col-6 el"(click)="toggleItem('cintura')">
-         <img class="element cintura" src="/pappagalli/elementi/cintura.png">
-        </div>
-       </div>
-     </div>
+      <img class="perg" src="pergamena.png">
+      <div class="cont">
+        <div class="row pt-5 elcont">
+          <div class="col-6 d-flex " (click)="toggleItem('spada')">
+           <img class="element" src="/pappagalli/elementi/spada.png">
+          </div>
+          <div class="col-6 el d-flex pt-2"(click)="toggleItem('cappellopirata')">
+           <img class="element " src="/pappagalli/elementi/cappello.png">
+          </div>
+          <div class="col-6 el d-flex  "(click)="toggleItem('bandana')">
+           <img class="element" src="/pappagalli/elementi/bandana.png">
+          </div>
+          <div class="col-6"(click)="toggleItem('cintura')">
+           <img class="element " src="/pappagalli/elementi/cintura.png">
+          </div>
+         </div>
+      </div>
+
     </div>
   </div>
 </div>
