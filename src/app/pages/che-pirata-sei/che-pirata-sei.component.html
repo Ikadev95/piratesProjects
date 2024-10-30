@@ -1,244 +1,92 @@
-<!-- inizio domanda1 -->
-<p *ngIf="domanda1">
-  Yarr! Ti ritrovi tra le mani una vecchia mappa con segni strani e un’X marcata
-  al centro. Ma non sei certo di cosa rappresenti! Che faresti, pirata?
-</p>
+<!-- che-pirata-sei.component.html -->
+<div class="pirate-quiz-container">
+  <div *ngIf="domande.length > 0" class="quiz-section animate-fadeInUp">
+    <div class="question-card">
+      <h2 class="question-text">{{ domandeShuffle[index].domanda }}</h2>
 
-<!-- inizio domanda2 -->
-<p *ngIf="domanda2">
-  Dì un po', mentre navighiamo verso il tramonto, scopri che un’altra nave ci
-  segue da vicino. Che pensiero ti passa per la testa, giovanotto?
-</p>
+      <div class="options-container">
+        <div
+          class="option animate-fadeInLeft animate-delay-1s"
+          (click)="incrementCannoniere()"
+        >
+          <div class="option-content">
+            <i class="fas fa-cannon"></i>
+            {{ domandeShuffle[index].cannoniere }}
+          </div>
+        </div>
 
-<!-- inizio domanda3 -->
-<p *ngIf="domanda3">
-  Immagina di trovarti su un’isola remota e deserta. Dopo giorni di fame e
-  fatica, trovi un baule chiuso a chiave. Cosa fai con questo strano bottino?
-</p>
+        <div
+          class="option animate-fadeInRight animate-delay-1s"
+          (click)="incrementCapitano()"
+        >
+          <div class="option-content">
+            <i class="fas fa-anchor"></i>
+            {{ domandeShuffle[index].capitano }}
+          </div>
+        </div>
 
-<!-- inizio domanda4 -->
-<p *ngIf="domanda4">
-  Mentre la nave oscilla sulle onde, senti un forte odore di fumo! Cosa faresti
-  per primo in caso d'emergenza?
-</p>
+        <div
+          class="option animate-fadeInLeft animate-delay-2s"
+          (click)="incrementMozzo()"
+        >
+          <div class="option-content">
+            <i class="fas fa-broom"></i>
+            {{ domandeShuffle[index].mozzo }}
+          </div>
+        </div>
 
-<!-- inizio domanda5 -->
-<p *ngIf="domanda5">
-  Ogni pirata deve tener con sé un oggetto speciale che lo rappresenti. Qual è
-  il tuo, e perché?
-</p>
+        <div
+          class="option animate-fadeInRight animate-delay-2s"
+          (click)="incrementNavigatore()"
+        >
+          <div class="option-content">
+            <i class="fas fa-compass"></i>
+            {{ domandeShuffle[index].navigatore }}
+          </div>
+        </div>
 
-<!-- inizio domanda6 -->
-<p *ngIf="domanda6">
-  In una notte di tempesta, l'intera ciurma è in preda al panico! Dove ti trovi
-  tu, nel bel mezzo di questo caos?
-</p>
+        <div
+          class="option animate-fadeInLeft animate-delay-3s"
+          (click)="incrementSpugna()"
+        >
+          <div class="option-content">
+            <i class="fas fa-water"></i>
+            {{ domandeShuffle[index].spugna }}
+          </div>
+        </div>
 
-<!-- inizio domanda7 -->
-<p *ngIf="domanda7">
-  Ogni giorno in mare è un'avventura diversa. Come affronti le giornate di
-  calma, quando non c’è terra né battaglia in vista?
-</p>
+        <div
+          class="option animate-fadeInRight animate-delay-3s"
+          (click)="incrementCorsaro()"
+        >
+          <div class="option-content">
+            <i class="fas fa-skull-crossbones"></i>
+            {{ domandeShuffle[index].corsaro }}
+          </div>
+        </div>
+      </div>
 
-<!-- ------------------------------------------risposte--------------------------- -->
+      <div class="progress-bar">
+        <div class="progress" [style.width]="(index + 1) * 16.67 + '%'"></div>
+      </div>
+    </div>
+  </div>
 
-<!-- inizio blocco risposte1 -->
-<div *ngIf="domanda1">
-  <button (click)="buttonNav1()">
-    Mi metto a decifrare quei segni, ogni dettaglio può nascondere un indizio!
-  </button>
-  <button (click)="buttonCap1()">
-    Corro subito a mostrarla al mio capo, un affare così non posso gestirlo da
-    solo!
-  </button>
-  <button (click)="buttonMozzo1()">
-    Me la metto in tasca e faccio finta di nulla. Al massimo la userò più tardi
-    per pulire un po' di polvere.
-  </button>
-  <button (click)="buttonSpu1()">
-    Non so leggere le mappe, ma magari potrebbe farmi da tovaglietta mentre
-    sorseggio qualcosa di forte
-  </button>
-  <button (click)="buttonCann1()">
-    Non serve studiare: una buona dose di polvere da sparo e vediamo cosa si
-    nasconde sotto quell’X!
-  </button>
-  <button (click)="buttonCors1()">
-    Niente fretta, la nascondo finché non decido con chi dividerla… o se tenerla
-    per me.
-  </button>
+  <div *ngIf="finedomande" class="final-section animate-fadeInUp">
+    <h2 class="pirate-text">Arrr! Sei pronto a scoprire che pirata sei?</h2>
+    <button class="pirate-button" (click)="button()">
+      <i class="fas fa-treasure-chest"></i>
+      Scopri il tuo destino!
+    </button>
+  </div>
+
+  <ng-container *ngIf="ruoloFinale">
+    <div *ngIf="scopriRuolo" class="result-section animate-fadeInUp">
+      <div class="treasure-reveal">
+        <h1 class="result-title">Congratulazioni, Pirata!</h1>
+        <h2 class="role-text">Il tuo ruolo è:</h2>
+        <h3 class="role-name">{{ ruoloFinale | uppercase }}</h3>
+      </div>
+    </div>
+  </ng-container>
 </div>
-
-<!-- inizio blocco risposte2 -->
-<div *ngIf="domanda2">
-  <button (click)="buttonCap2()">
-    Devo decidere in fretta e assicurarmi che ognuno sappia cosa fare: nessuno
-    entra in azione senza il mio ordine!
-  </button>
-  <button (click)="buttonMozzo2()">
-    Vado subito a prendere secchi e spugne! Se scoppia un pasticcio, qualcuno
-    dovrà pulire il disastro.
-  </button>
-  <button (click)="buttonNav2()">
-    Meglio controllare la rotta e vedere da che parte possiamo sfuggire alla
-    vista!
-  </button>
-  <button (click)="buttonSpu2()">
-    Non riesco a vedere troppo bene da qui... E se ci mettessimo a fare un
-    brindisi alla faccia loro?
-  </button>
-  <button (click)="buttonCors2()">
-    Mi metto in posizione e studio bene come possiamo convincerli a lasciarci
-    qualche doblone senza resistere.
-  </button>
-  <button (click)="buttonCann2()">
-    Oh, finalmente! Qualcuno su cui provare il mio nuovo giocattolo a polvere
-    nera!
-  </button>
-</div>
-
-<!-- inizio blocco risposte3 -->
-<div *ngIf="domanda3">
-  <button (click)="buttonCann3()">
-    Perfetto! È ora di vedere quanto un po’ di esplosivo può tornare utile.
-  </button>
-  <button (click)="buttonCap3()">
-    Prima di tutto, devo valutare bene la situazione e decidere chi può aiutarmi
-    ad aprirlo.
-  </button>
-  <button (click)="buttonNav3()">
-    La chiave non mi serve, posso già capire cosa c'è dentro usando un po' di
-    logica e osservazione.
-  </button>
-  <button (click)="buttonSpu3()">
-    Tento di aprirlo col mio coltello, ma se non va, almeno posso usarlo come
-    tavolino per il mio bottiglione!
-  </button>
-  <button (click)="buttonMozzo3()">
-    Non ho tempo per aprirlo ora, lo trasporto alla nave e lo pulisco per
-    benino: i bauli preziosi si trattano con rispetto.
-  </button>
-  <button (click)="buttonCors3()">
-    Lo nascondo bene, non si sa mai che ci trovi un po' di monete d'oro… tutto a
-    tempo debito.
-  </button>
-</div>
-
-<!-- inizio blocco risposte4 -->
-<div *ngIf="domanda4">
-  <button (click)="buttonSpu4()">
-    Bevo un sorso rapido per il coraggio e vado a vedere. Non si può certo
-    lasciar tutto in fiamme!
-  </button>
-  <button (click)="buttonMozzo4()">
-    Prendo subito acqua e secchi, ogni barile può servire per spegnere il fuoco!
-  </button>
-  <button (click)="buttonNav4()">
-    Punto il naso verso il vento, così da determinare la direzione del fumo e la
-    fonte del problema.
-  </button>
-  <button (click)="buttonCors4()">
-    Mi sposto subito per mettere in salvo il bottino! Nessuno si avvicina ai
-    miei dobloni!
-  </button>
-  <button (click)="buttonCann4()">
-    Che meraviglia! Dove c'è fumo, ci sarà un’esplosione! Corro a controllare i
-    miei cannoni!
-  </button>
-  <button (click)="buttonCap4()">
-    Mando subito i membri della ciurma nei posti chiave: nessuno corre se non
-    sotto i miei ordini!
-  </button>
-</div>
-
-<!-- inizio blocco risposte5 -->
-<div *ngIf="domanda5">
-  <button (click)="buttonCann5()">
-    Il mio adorato acciarino, pronto a dar fuoco alle polveri e ai miei piccoli
-    cannoni!
-  </button>
-  <button (click)="buttonMozzo5()">
-    Una spugna e un secchio: non mi separo mai dagli strumenti che tengono
-    pulita la nave.
-  </button>
-  <button (click)="buttonNav5()">
-    Un astrolabio o una bussola di precisione, perfetti per non perdere mai la
-    strada in mare aperto.
-  </button>
-  <button (click)="buttonCors5()">
-    Un piccolo sacco di monete d’oro, perché ogni buon pirata sa dove nascondere
-    il suo bottino.
-  </button>
-  <button (click)="buttonCap5()">
-    Un vecchio cannocchiale, con cui posso tenere d'occhio la ciurma e tutto ciò
-    che mi circonda.
-  </button>
-  <button (click)="buttonSpu5()">
-    La mia fedele bottiglia di rum. È l’unica cosa di cui ho davvero bisogno nei
-    momenti duri!
-  </button>
-</div>
-
-<!-- inizio blocco risposte6 -->
-<div *ngIf="domanda6">
-  <button (click)="buttonMozzo6()">
-    Pronto con secchi e stracci: nulla va fuori posto, non importa quanto forte
-    sia il vento!
-  </button>
-  <button (click)="buttonCann6()">
-    Sopra il ponte, vicino ai cannoni! La mia forza è in azione!
-  </button>
-  <button (click)="buttonCors6()">
-    Nascosto nella stiva, ad assicurarmi che nessuno tocchi il bottino in mia
-    assenza!
-  </button>
-  <button (click)="buttonNav6()">
-    Cerco di seguire le stelle per capire se stiamo ancora seguendo la rotta
-    corretta.
-  </button>
-  <button (click)="buttonCap6()">
-    Do istruzioni precise a tutti, non lascio nessuno allo sbando in mia
-    presenza!
-  </button>
-  <button (click)="buttonSpu6()">
-    Sotto coperta! Meglio stare al sicuro con una bottiglia di rum, sperando che
-    la tempesta passi!
-  </button>
-</div>
-
-<!-- inizio blocco risposte7 -->
-<div *ngIf="domanda7">
-  <button (click)="buttonNav7()">
-    Mi concentro sugli studi di nuove rotte e sulle mappe… il mare ha sempre
-    qualcosa da insegnare!
-  </button>
-  <button (click)="buttonSpu7()">
-    Una giornata tranquilla? Il momento ideale per gustarsi un buon sorso di rum
-    sotto coperta.
-  </button>
-  <button (click)="buttonCann7()">
-    Controllo i miei cannoni e, se tutto è in ordine, magari faccio un po’ di
-    pratica.
-  </button>
-  <button (click)="buttonCors7()">
-    Calcolo il valore dei nostri tesori e studio modi per accumularne altri
-    senza troppi rischi.
-  </button>
-  <button (click)="buttonCap7()">
-    Controllo che tutti siano impegnati: è il mio dovere mantenere la
-    disciplina, anche nei momenti di quiete.
-  </button>
-  <button (click)="buttonMozzo7()">
-    Faccio pulizie, lucido il ponte e organizzo tutto! È l’occasione perfetta
-    per rimettere in sesto la nave.
-  </button>
-</div>
-
-<div *ngIf="finedomande">
-  scopri finalmente che pirata sei
-  <button (click)="button()">scopri</button>
-</div>
-
-<ng-container *ngIf="ruoloFinale">
-  <div *ngIf="scopriRuolo">Pirata, il tuo ruolo è: {{ ruoloFinale }}</div>
-</ng-container>

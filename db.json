@@ -15,6 +15,22 @@
       "cognome": "Guglielmo",
       "username": "federika",
       "id": 10
+    },
+    {
+      "email": "federico.peralta@hotmail.it",
+      "password": "$2a$10$FmCc4puN5q/ogkQ0jREvWOgQfUi0ztwBnRtlA/.Gzn4oPigABqOQO",
+      "nome": "Federico",
+      "cognome": "Peralta",
+      "username": "Fedepera",
+      "id": 11
+    },
+    {
+      "email": "gianmarco@pirata.it",
+      "password": "$2a$10$L.D76hfz.jwRFDOc.srbTu0cZ8X9CFk1/aK6hT58qNJiijgS.lBia",
+      "nome": "Gianmarco",
+      "cognome": "Arzanese",
+      "username": "Zanes",
+      "id": 12
     }
   ]
 }

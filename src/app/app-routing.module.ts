@@ -4,7 +4,12 @@ import { RouterModule, Routes } from '@angular/router';
 import { UserGuard } from './guards/user.guard';
 
 const routes: Routes = [
-
+  {
+    path: '',
+    loadChildren: () =>
+      import('./pages/auth/auth.module').then((m) => m.AuthModule),
+    canActivate: [UserGuard],
+  },
   {
     path: 'home',
     loadChildren: () =>
@@ -20,18 +25,32 @@ const routes: Routes = [
     canActivate: [AuthGuard],
   },
   {
+    path: 'caccia-al-tesoro',
+    loadChildren: () =>
+      import('./pages/caccia-al-tesoro/caccia-al-tesoro.module').then(
+        (m) => m.CacciaAlTesoroModule
+      ),
+    canActivate: [AuthGuard],
+  },
+  {
     path: 'register',
     loadChildren: () =>
       import('./pages/register/register.module').then((m) => m.RegisterModule),
     canActivate: [UserGuard],
   },
   {
-    path: '',
+    path: 'login',
     loadChildren: () =>
       import('./pages/log-in/log-in.module').then((m) => m.LogInModule),
     canActivate: [UserGuard],
   },
-  { path: 'customize', loadChildren: () => import('./pages/customize/customize.module').then(m => m.CustomizeModule) },
+  {
+    path: 'cutomize',
+    loadChildren: () =>
+      import('./pages/customize/customize.module').then(
+        (m) => m.CustomizeModule
+      ),
+  },
   {
     path: '**',
     loadChildren: () =>

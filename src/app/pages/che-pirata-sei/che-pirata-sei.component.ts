@@ -1,6 +1,9 @@
 import { Component } from '@angular/core';
 import { iUser } from '../../interfaces/i-user';
 import { AuthService } from '../../services/auth.service';
+import { iDomanda } from '../../interfaces/i-domanda';
+import { ChePirataSeiService } from '../../services/che-pirata-sei.service';
+import { iRuolo } from '../../interfaces/i-ruolo';
 
 @Component({
   selector: 'app-che-pirata-sei',
@@ -9,18 +12,15 @@ import { AuthService } from '../../services/auth.service';
 })
 export class ChePirataSeiComponent {
   user!: iUser;
-  domanda1: boolean = true;
-  domanda2: boolean = false;
-  domanda3: boolean = false;
-  domanda4: boolean = false;
-  domanda5: boolean = false;
-  domanda6: boolean = false;
-  domanda7: boolean = false;
   finedomande: boolean = false;
-  fineQuiz: boolean = false;
+  index: number = 0;
 
   scopriRuolo: boolean = false;
-  ruoli = {
+  domande: iDomanda[] = [];
+  domandeShuffle: iDomanda[] = [];
+  legendaRuolo: string = '';
+
+  ruoli: iRuolo = {
     capitano: 0,
     mozzo: 0,
     spugna: 0,
@@ -31,283 +31,20 @@ export class ChePirataSeiComponent {
 
   ruoloFinale!: string;
 
-  constructor(private authServ: AuthService) {
+  constructor(
+    private authServ: AuthService,
+    private chePirataSeiServ: ChePirataSeiService
+  ) {
     authServ.user$.subscribe((userS) => {
       if (userS) {
         this.user = userS;
       }
     });
+    this.domande = this.chePirataSeiServ.domande;
+    this.domandeShuffle = this.chePirataSeiServ.shuffleArray(this.domande);
   }
 
   ngOnInit() {}
-
-  // ------------------------------RISPOSTE 1PAGINA------------------------------------
-  buttonNav1() {
-    this.domanda1 = false;
-    this.domanda2 = true;
-    this.incrementNavigatore();
-  }
-
-  buttonCap1() {
-    this.domanda1 = false;
-    this.domanda2 = true;
-    this.incrementCapitano();
-  }
-
-  buttonMozzo1() {
-    this.domanda1 = false;
-    this.domanda2 = true;
-    this.incrementMozzo();
-  }
-
-  buttonSpu1() {
-    this.domanda1 = false;
-    this.domanda2 = true;
-    this.incrementSpugna();
-  }
-
-  buttonCann1() {
-    this.domanda1 = false;
-    this.domanda2 = true;
-    this.incrementCannoniere();
-  }
-
-  buttonCors1() {
-    this.domanda1 = false;
-    this.domanda2 = true;
-    this.incrementCorsaro();
-  }
-
-  // ------------------------------RISPOSTE 2PAGINA------------------------------------
-
-  buttonNav2() {
-    this.domanda2 = false;
-    this.domanda3 = true;
-
-    this.incrementNavigatore();
-  }
-
-  buttonCap2() {
-    this.domanda2 = false;
-    this.domanda3 = true;
-    this.incrementCapitano();
-  }
-
-  buttonMozzo2() {
-    this.domanda2 = false;
-    this.domanda3 = true;
-    this.incrementMozzo();
-  }
-
-  buttonSpu2() {
-    this.domanda2 = false;
-    this.domanda3 = true;
-    this.incrementSpugna();
-  }
-
-  buttonCann2() {
-    this.domanda2 = false;
-    this.domanda3 = true;
-    this.incrementCannoniere();
-  }
-
-  buttonCors2() {
-    this.domanda2 = false;
-    this.domanda3 = true;
-    this.incrementCorsaro();
-  }
-
-  // ------------------------------RISPOSTE 3PAGINA------------------------------------
-  buttonNav3() {
-    this.domanda3 = false;
-    this.domanda4 = true;
-
-    this.incrementNavigatore();
-  }
-
-  buttonCap3() {
-    this.domanda3 = false;
-    this.domanda4 = true;
-    this.incrementCapitano();
-  }
-
-  buttonMozzo3() {
-    this.domanda3 = false;
-    this.domanda4 = true;
-    this.incrementMozzo();
-  }
-
-  buttonSpu3() {
-    this.domanda3 = false;
-    this.domanda4 = true;
-    this.incrementSpugna();
-  }
-
-  buttonCann3() {
-    this.domanda3 = false;
-    this.domanda4 = true;
-    this.incrementCannoniere();
-  }
-
-  buttonCors3() {
-    this.domanda3 = false;
-    this.domanda4 = true;
-    this.incrementCorsaro();
-  }
-
-  // ------------------------------RISPOSTE 4PAGINA------------------------------------
-  buttonNav4() {
-    this.domanda4 = false;
-    this.domanda5 = true;
-
-    this.incrementNavigatore();
-  }
-
-  buttonCap4() {
-    this.domanda4 = false;
-    this.domanda5 = true;
-    this.incrementCapitano();
-  }
-
-  buttonMozzo4() {
-    this.domanda4 = false;
-    this.domanda5 = true;
-    this.incrementMozzo();
-  }
-
-  buttonSpu4() {
-    this.domanda4 = false;
-    this.domanda5 = true;
-    this.incrementSpugna();
-  }
-
-  buttonCann4() {
-    this.domanda4 = false;
-    this.domanda5 = true;
-    this.incrementCannoniere();
-  }
-
-  buttonCors4() {
-    this.domanda4 = false;
-    this.domanda5 = true;
-    this.incrementCorsaro();
-  }
-
-  // ------------------------------RISPOSTE 5PAGINA------------------------------------
-  buttonNav5() {
-    this.domanda5 = false;
-    this.domanda6 = true;
-
-    this.incrementNavigatore();
-  }
-
-  buttonCap5() {
-    this.domanda5 = false;
-    this.domanda6 = true;
-    this.incrementCapitano();
-  }
-
-  buttonMozzo5() {
-    this.domanda5 = false;
-    this.domanda6 = true;
-    this.incrementMozzo();
-  }
-
-  buttonSpu5() {
-    this.domanda5 = false;
-    this.domanda6 = true;
-    this.incrementSpugna();
-  }
-
-  buttonCann5() {
-    this.domanda5 = false;
-    this.domanda6 = true;
-    this.incrementCannoniere();
-  }
-
-  buttonCors5() {
-    this.domanda5 = false;
-    this.domanda6 = true;
-    this.incrementCorsaro();
-  }
-
-  // ------------------------------RISPOSTE 6PAGINA------------------------------------
-  buttonNav6() {
-    this.domanda6 = false;
-    this.domanda7 = true;
-
-    this.incrementNavigatore();
-  }
-
-  buttonCap6() {
-    this.domanda6 = false;
-    this.domanda7 = true;
-    this.incrementCapitano();
-  }
-
-  buttonMozzo6() {
-    this.domanda6 = false;
-    this.domanda7 = true;
-    this.incrementMozzo();
-  }
-
-  buttonSpu6() {
-    this.domanda6 = false;
-    this.domanda7 = true;
-    this.incrementSpugna();
-  }
-
-  buttonCann6() {
-    this.domanda6 = false;
-    this.domanda7 = true;
-    this.incrementCannoniere();
-  }
-
-  buttonCors6() {
-    this.domanda6 = false;
-    this.domanda7 = true;
-    this.incrementCorsaro();
-  }
-
-  // ------------------------------RISPOSTE 7PAGINA------------------------------------
-  buttonNav7() {
-    this.domanda7 = false;
-    this.finedomande = true;
-
-    this.incrementNavigatore();
-  }
-
-  buttonCap7() {
-    this.domanda7 = false;
-    this.finedomande = true;
-    this.incrementCapitano();
-  }
-
-  buttonMozzo7() {
-    this.domanda7 = false;
-    this.finedomande = true;
-    this.incrementMozzo();
-  }
-
-  buttonSpu7() {
-    this.domanda7 = false;
-    this.finedomande = true;
-    this.incrementSpugna();
-  }
-
-  buttonCann7() {
-    this.domanda7 = false;
-    this.finedomande = true;
-    this.incrementCannoniere();
-  }
-
-  buttonCors7() {
-    this.domanda7 = false;
-    this.finedomande = true;
-    this.incrementCorsaro();
-  }
-
-  //  -------bottone fine quiz
 
   button() {
     this.finedomande = false;
@@ -344,30 +81,74 @@ export class ChePirataSeiComponent {
       riferimento.ruolo = 'spugna';
     }
     this.ruoloFinale = riferimento.ruolo;
+    if (this.ruoloFinale === 'capitano') {
+      this.legendaRuolo =
+        'Capitano 🏴‍☠️: Il capo assoluto e autorevolmente indeciso su quale sia la rotta giusta. Sa esattamente dove andare... finché qualcuno non lo contraddice!';
+      return;
+    }
+    if (this.ruoloFinale === 'spugna') {
+      this.legendaRuolo =
+        "Spugna 🍺: Colui che prende la vita di mare alla lettera... e beve come se dovesse prosciugare l'oceano. Se c’è del grog nei paraggi, è già mezzo vuoto.";
+      return;
+    }
+    if (this.ruoloFinale === 'cannoniere') {
+      this.legendaRuolo =
+        'Cannoniere 💣: Artista esplosivo con una mira discutibile. Preferisce sparare prima e chiedere dopo (se ci riesce). Dice sempre: “Non siamo qui per fare amicizia, tranne con la polvere da sparo!”';
+      return;
+    }
+    if (this.ruoloFinale === 'mozzo') {
+      this.legendaRuolo =
+        'Mozzo 🪣: L’eroe delle pulizie e maestro di stracci e secchi. Sogna avventure incredibili, ma per ora lotta contro la sua nemesi: le macchie di guano sulle assi.”';
+      return;
+    }
+    if (this.ruoloFinale === 'corsaro') {
+      this.legendaRuolo =
+        'Corsaro ⚔️: Il pirata coi documenti! Tecnicamente non un fuorilegge... o almeno così spera. È quello che minaccia di denunciarvi... a voi stessi.”';
+      return;
+    }
+    if (this.ruoloFinale === 'navigatore') {
+      this.legendaRuolo =
+        'Navigatore 🧭: Il “GPS” della nave, esperto nel perdersi magnificamente. Assicura a tutti di avere la situazione sotto controllo, anche quando il controllo è bello che perso.”';
+      return;
+    }
   }
   // ----------------------------------------------------------------
 
+  incrementaIndex() {
+    if (this.index < 6) {
+      this.index++;
+      return;
+    }
+    this.finedomande = true;
+  }
+
   incrementCapitano() {
     this.ruoli.capitano++;
+    this.incrementaIndex();
   }
 
   incrementMozzo() {
     this.ruoli.mozzo++;
+    this.incrementaIndex();
   }
 
   incrementCannoniere() {
     this.ruoli.cannoniere++;
+    this.incrementaIndex();
   }
 
   incrementCorsaro() {
     this.ruoli.corsaro++;
+    this.incrementaIndex();
   }
 
   incrementSpugna() {
     this.ruoli.spugna++;
+    this.incrementaIndex();
   }
 
   incrementNavigatore() {
     this.ruoli.navigatore++;
+    this.incrementaIndex();
   }
 }
