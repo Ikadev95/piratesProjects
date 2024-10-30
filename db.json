@@ -35,6 +35,15 @@
       "username": "ika",
       "score": 106,
       "id": 16
+    },
+    {
+      "email": "andrea@aaa",
+      "password": "$2a$10$DsexbBvSeB99R1ys/krP6OnZl4S6wrSl8qpHpIgXsjg0HxG0moAx.",
+      "nome": "andrea",
+      "cognome": "andrea",
+      "username": "andrea",
+      "score": 84,
+      "id": 17
     }
   ]
 }

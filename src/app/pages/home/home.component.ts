@@ -11,7 +11,7 @@ import { iUser } from '../../interfaces/i-user';
 export class HomeComponent {
   @ViewChild('aggiunto') aggiunto!: ElementRef;
 
-  user!: iUser
+  user!: iUser;
 
   constructor(private authServ: AuthService) {}
 
@@ -19,11 +19,13 @@ export class HomeComponent {
     this.authServ.restoreUser();
     this.setupAutoLogout();
 
-    this.authServ.user$.subscribe(
-      user => {if (user) {this.user = user}}
-    )
+    this.authServ.user$.subscribe((user) => {
+      if (user) {
+        this.user = user;
+      }
+    });
 
-    console.log(this.user)
+    console.log(this.user);
   }
 
   setupAutoLogout() {
