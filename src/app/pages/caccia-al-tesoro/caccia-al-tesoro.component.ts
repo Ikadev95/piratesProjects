@@ -18,6 +18,15 @@ export class CacciaAlTesoroComponent {
   indizio6: boolean = false;
   indizio7: boolean = false;
   indizio8: boolean = false;
+  indizio9: boolean = false;
+  indizio10: boolean = false;
+  indizio11: boolean = false;
+  indizio12: boolean = false;
+  indizio13: boolean = false;
+  indizio14: boolean = false;
+  indizio15: boolean = false;
+  indizio16: boolean = false;
+
   finegioco: boolean = false;
   contaclick: number = 0;
   punteggio: number = 116;
