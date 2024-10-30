@@ -19,6 +19,7 @@ export class ChePirataSeiComponent {
   domande: iDomanda[] = [];
   domandeShuffle: iDomanda[] = [];
   legendaRuolo: string = '';
+  mostraQuiz: boolean = true;
 
   ruoli: iRuolo = {
     capitano: 0,
@@ -49,6 +50,8 @@ export class ChePirataSeiComponent {
   button() {
     this.finedomande = false;
     this.scopriRuolo = true;
+    this.mostraQuiz = false;
+
     this.buttonFinal();
     console.log(this.ruoloFinale);
   }
