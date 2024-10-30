@@ -106,4 +106,8 @@ export class CustomizeComponent implements OnInit {
     return foto.length === array.length && foto.every((val, index) => val === array[index]);
   }
 
+
+  send(){
+    //qui inviamo il dato al db
+  }
 }
