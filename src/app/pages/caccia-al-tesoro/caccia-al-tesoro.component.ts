@@ -1,4 +1,9 @@
 import { Component } from '@angular/core';
+import { AuthService } from '../../services/auth.service';
+import { CacciaAlTesoroService } from '../../services/caccia-al-tesoro.service';
+import { iUser } from '../../interfaces/i-user';
+import { HttpClient } from '@angular/common/http';
+import { environment } from '../../../environments/environment.development';
 
 @Component({
   selector: 'app-caccia-al-tesoro',
@@ -17,10 +22,23 @@ export class CacciaAlTesoroComponent {
   finegioco: boolean = false;
   contaclick: number = 0;
   punteggio: number = 116;
+  user!: iUser;
+  userUrl: string = environment.userUrl;
+  scoreValue: number = 0;
+  isRecord: boolean = false;
 
-  constructor() {}
+  constructor(private authServ: AuthService, private http: HttpClient) {
+    this.authServ.user$.subscribe((user) => {
+      if (user) {
+        this.user = user;
+      }
+      this.user.score = 0;
+    });
+  }
 
-  ngOnInit() {}
+  ngOnInit() {
+    setTimeout(() => console.log(this.user), 2000);
+  }
 
   incrementaClick() {
     this.contaclick++;
@@ -100,6 +118,13 @@ export class CacciaAlTesoroComponent {
       this.indizio8 = true;
       this.finegioco = true;
       this.punteggio -= this.contaclick;
+      if (this.user.id) {
+        this.addScoreAtUser(this.user.id, this.scoreValue, this.punteggio);
+        this.scoreValue = this.punteggio;
+
+        console.log('punteggio', this.punteggio);
+        console.log('score', this.scoreValue);
+      }
     } else {
       this.indizio1 = false;
       this.indizio2 = false;
@@ -107,6 +132,18 @@ export class CacciaAlTesoroComponent {
       this.indizio4 = false;
       this.indizio5 = false;
       this.indizio6 = false;
+    }
+  }
+
+  addScoreAtUser(id: number, scoreValue: number, punteggio: number) {
+    if (punteggio > scoreValue) {
+      console.log('user.score', this.user.score);
+      this.isRecord = true;
+      return this.http
+        .patch(`${this.userUrl}/${id}`, { score: scoreValue })
+        .subscribe();
+    } else {
+      return this.user;
     }
   }
 }

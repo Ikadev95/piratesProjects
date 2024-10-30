@@ -31,6 +31,15 @@
       "cognome": "Arzanese",
       "username": "Zanes",
       "id": 12
+    },
+    {
+      "email": "test@score",
+      "password": "$2a$10$3Npgd5K5xOLWN2A15DKVRuSQb9CfSfhaL2X5D3SC2Gq81Ta5b2nlS",
+      "nome": "test-score",
+      "cognome": "test-score",
+      "username": "test-score",
+      "id": 13,
+      "score": 0
     }
   ]
 }
