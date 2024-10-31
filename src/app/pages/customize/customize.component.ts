@@ -23,6 +23,7 @@ export class CustomizeComponent implements OnInit {
   bandana: boolean = false;
   cappellopirata: boolean = false;
   genere:boolean = false;
+  array: boolean[] = [];
 
   fotos: any[] = [
     {
@@ -139,17 +140,30 @@ export class CustomizeComponent implements OnInit {
     this.authServ.user$.subscribe((user) => {
       if (user) {
         this.user = user;
+        this.foto = this.user.src;
+
+        const matchingFoto = this.fotos.find(f => f.src === this.foto);
+        if (matchingFoto) {
+          this.array = matchingFoto.array;
+        }
       }
     });
-    this.foto = this.user.src
-    if(this.foto === "/pappagalli/init2.png"){this.fotog = "/pappagalli/init.png" }
-    else{
-      this.fotog = "/pappagalli/init.png"
-    }
   }
 
   ngOnInit(): void {
+    // Ensure the array has the correct length before assigning values
+    if (this.array.length === 5) {
+      this.spada = this.array[0];
+      this.cintura = this.array[1];
+      this.bandana = this.array[2];
+      this.cappellopirata = this.array[3];
+      this.genere = this.array[4];
+    } else {
+      console.error('Array length is not 5:', this.array);
+    }
   }
+
+
 
   toggleItem(element: string) {
     switch(element) {
