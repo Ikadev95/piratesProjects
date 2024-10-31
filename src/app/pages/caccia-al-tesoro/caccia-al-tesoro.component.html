@@ -17,9 +17,61 @@
                   -->
 <!-- -->
 
-<div class="container p-5">
+<div class="container p-5" *ngIf="showContainer">
+  <h1>Regole del Gioco: Caccia al Tesoro dei Pirati</h1>
+
+  <ul>
+    <li>
+      Obiettivo: Trova il tesoro nascosto seguendo gli indizi forniti. Ogni
+      indizio ti condurrà a un nuovo passo, avvicinandoti sempre più alla meta
+      finale!
+    </li>
+    <li>
+      Navigazione: Clicca sui vari pulsanti con i nomi dei tuoi compagni di
+      classe per scoprire gli indizi successivi. Ogni pulsante potrebbe rivelare
+      un dettaglio nascosto che ti guiderà più vicino al tesoro.
+    </li>
+    <li>
+      Conoscenza della Classe: Usa la tua conoscenza dei tuoi amici e dei loro
+      gusti per interpretare gli indizi. Alcuni dettagli possono essere nascosti
+      nei soprannomi, immagini o simboli. Divertiti e buon viaggio, giovane
+      pirata! Primo indizio: Mette 6 e dice che è un bel voto!
+    </li>
+  </ul>
+  <h2>Divertiti e buon viaggio, giovane pirata!</h2>
+
+  <div class="button_buttonWrapper__Z0lN_ col-12">
+    <button class="button-13" role="button">
+      <span class="text"> </span>
+
+      <span class="text fs-3"
+        >PRIMO INDIZIO: Mette 6 e dice che è un bel voto!
+      </span>
+      <span class="button-13-background"></span>
+      <span class="button-13-border"></span>
+
+      <svg style="position: absolute" width="0" height="0">
+        <filter id="remove-black-button-13" color-interpolation-filters="sRGB">
+          <feColorMatrix
+            type="matrix"
+            values="1 0 0 0 0
+                0 1 0 0 0
+                0 0 1 0 0
+                -1 -1 -1 0 1"
+            result="black-pixels"
+          ></feColorMatrix>
+          <feComposite
+            in="SourceGraphic"
+            in2="black-pixels"
+            operator="out"
+          ></feComposite>
+        </filter>
+      </svg>
+    </button>
+  </div>
+
   <div class="row text-center d-flex">
-    <img src="octopus.png" class="position-absolute w-75" alt="" />
+    <img src="octopus.png" class="position-absolute h-100 w-75" alt="" />
     <!-- =======bottone da aggiungere -->
 
     <div
@@ -34,7 +86,7 @@
         <span class="text">MICHELE</span>
         <br />
         <span class="text" *ngIf="indizi[0]"
-          >ban sempre piu' vicino e amicizia sempre piu lontana
+          >BAN sempre piu' vicino e amicizia sempre piu lontana
         </span>
         <span class="button-13-background"></span>
         <span class="button-13-border"></span>
@@ -74,7 +126,7 @@
         <span class="text">DANILO</span>
         <br />
         <span class="text" *ngIf="indizi[7]"
-          >quello che tra erba e musica e' diventato il saggio</span
+          >quello che tra stecche e musica e' diventato il saggio</span
         >
         <span class="button-13-background"></span>
         <span class="button-13-border"></span>
@@ -431,7 +483,10 @@
         <br />
         <span class="text">TAMMARO</span>
         <br />
-        <span class="text" *ngIf="indizi[14]"> GIOCO FINITO </span>
+        <span class="text" *ngIf="indizi[14]">
+          CONGRATULAZIONI ... hai formato la tua ciurma e hai trovato il ONE
+          PIACE
+        </span>
         <span class="button-13-background"></span>
         <span class="button-13-border"></span>
 
@@ -544,7 +599,7 @@
     >
       <button class="button-13" role="button">
         <span class="text"
-          ><img src="RICCARDO.jpg" class="w-50 rounded-5" alt=""
+          ><img src="RICCARDO1.jpg" class="w-50 rounded-5" alt=""
         /></span>
         <br />
         <span class="text">RICCARDO</span>
@@ -617,8 +672,21 @@
     </div>
   </div>
 </div>
-<h3 *ngIf="finegioco" class="text-center text-warning">
-  hai trovato il tesoro
-  <h1 *ngIf="isRecord" class="text-center text-warning">NUOVO RECORD</h1>
-  <h3>il tuo punteggio è {{ punteggio }}</h3>
-</h3>
+<div class="game-over-container py-5" *ngIf="finegioco">
+  <h3 class="victory-title">
+    <span class="treasure-text"
+      >Tu e la tua nuova ciurma avete trovato il tesoro !</span
+    >
+    <div class="treasure-icon">🏆</div>
+  </h3>
+
+  <h1 *ngIf="isRecord" class="new-record">
+    <span class="record-text">NUOVO RECORD</span>
+    <div class="sparkles">✨</div>
+  </h1>
+
+  <h3 class="score-display">
+    <span class="score-label">Il tuo punteggio è</span>
+    <span class="score-value">{{ punteggio }}</span>
+  </h3>
+</div>

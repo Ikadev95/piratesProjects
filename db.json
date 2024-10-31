@@ -1,14 +1,24 @@
 {
   "users": [
     {
-      "email": "fegughi@gmail.com",
-      "password": "$2a$10$d3P7fubGi8Rw2OLK7.jtxug3dLoNzSum0STiZQ0dXAoUFi2/Zwz/G",
-      "nome": "Federica",
-      "cognome": "Guglielmo",
-      "username": "federika",
-      "score": 0,
+      "email": "gianmarco@pirata.it",
+      "password": "$2a$10$xxaCuiO1yBWD9y07JikMq.T/5N1Mp/o8Gg/1DTaVOD.qgFY1zzU..",
+      "nome": "Gianmarco",
+      "cognome": "Arzanese",
+      "username": "Zanes",
+      "score": 100,
       "src": "/pappagalli/spada-cappellopirata-cintura.png",
       "id": 1
+    },
+    {
+      "email": "federico@pirata.it",
+      "password": "$2a$10$En69L6QV8AYpTXWv2psRfeukh2UxM5lt95W/q8HPZx0pdFpI080J.",
+      "nome": "Federico",
+      "cognome": "Pera",
+      "username": "PeraFed",
+      "score": 0,
+      "src": "/pappagalli/init.png",
+      "id": 2
     }
   ]
 }

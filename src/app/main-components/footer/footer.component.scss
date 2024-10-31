@@ -5,6 +5,15 @@
   padding: 20px 0;
   text-align: center;
 
+  ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  a {
+    color: #ffffff;
+    text-decoration: none;
+  }
+
   .footer-content {
     display: flex;
     justify-content: space-between;
