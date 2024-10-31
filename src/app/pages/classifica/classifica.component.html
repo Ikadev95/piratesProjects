@@ -1,0 +1,16 @@
+<div class="classifica-container" *ngIf="userArrOrd.length > 0">
+  <table>
+    <thead>
+      <tr>
+        <th>Username</th>
+        <th>Punteggio</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of userArrOrd">
+        <td>{{ user.username }}</td>
+        <td>{{ user.score }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
