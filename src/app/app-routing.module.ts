@@ -50,6 +50,14 @@ const routes: Routes = [
       import('./pages/customize/customize.module').then(
         (m) => m.CustomizeModule
       ),
+    canActivate: [AuthGuard],
+  },
+  {
+    path: 'classifica',
+    loadChildren: () =>
+      import('./pages/classifica/classifica.module').then(
+        (m) => m.ClassificaModule
+      ),
   },
   {
     path: '**',

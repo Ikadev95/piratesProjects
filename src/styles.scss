@@ -12,6 +12,10 @@ body {
   min-height: 100vh;
 }
 
+main {
+  padding-bottom: 2rem !important;
+}
+
 h1,
 h2,
 h3,
@@ -27,14 +31,14 @@ h1 {
 /* Importing Bootstrap SCSS file. */
 @import "bootstrap/scss/bootstrap";
 
-.btn{
+.btn {
   background-color: #0c2845;
   border: 1px solid #e0c088;
   font-family: "Pirata One", sans-serif;
   color: white;
   font-size: 20px;
 }
-.btn:hover{
+.btn:hover {
   background-color: #e0c088;
   border-color: #0c2845;
   color: #0c2845;
