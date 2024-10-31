@@ -1,0 +1,81 @@
+.pirate-footer {
+  background-color: #0a2c3d;
+  color: #ffffff;
+  font-family: "Pirate One", sans-serif;
+  padding: 20px 0;
+  text-align: center;
+
+  .footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 10px;
+    gap: 20px;
+
+    .section {
+      width: 30%;
+      text-align: center;
+
+      p {
+        margin: 5px 0;
+      }
+
+      .creators {
+        list-style-type: none;
+        padding: 0;
+        margin: 10px 0;
+
+        li {
+          margin: 5px 0;
+        }
+      }
+
+      .social-icons {
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+
+        a {
+          color: #ffffff;
+          font-size: 18px;
+          transition: color 0.3s;
+
+          &:hover {
+            color: #f1c40f;
+          }
+        }
+      }
+
+      .site-map-section h4 {
+        font-size: 1.2rem;
+        margin-bottom: 5px;
+      }
+
+      .site-map-section ul li a {
+        color: #f1c40f;
+        text-decoration: none;
+        transition: color 0.3s;
+
+        &:hover {
+          color: #ffffff;
+        }
+      }
+
+      .pirate-quote {
+        margin: 15px 0;
+        font-size: 1rem;
+
+        .icon {
+          font-size: 1.2rem;
+        }
+      }
+
+      .footer-credits {
+        margin-top: 10px;
+        font-size: 0.9rem;
+      }
+    }
+  }
+}
