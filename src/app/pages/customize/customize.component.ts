@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from '../../services/auth.service';
+import { HttpClient } from '@angular/common/http';
+import { iUser } from '../../interfaces/i-user';
+import { environment } from '../../../environments/environment.development';
 
 @Component({
   selector: 'app-customize',
@@ -7,9 +11,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CustomizeComponent implements OnInit {
 
-  foto: string = "/pappagalli/init.png";
-
   fotog: string = "/pappagalli/init2.png";
+  user!:iUser
+
+  foto!: string;
+
+  userUrl: string = environment.userUrl;
 
   spada: boolean = false;
   cintura: boolean = false;
@@ -128,6 +135,15 @@ export class CustomizeComponent implements OnInit {
 
   ];
 
+  constructor(private authServ: AuthService, private http: HttpClient) {
+    this.authServ.user$.subscribe((user) => {
+      if (user) {
+        this.user = user;
+      }
+    });
+    this.foto = this.user.src
+  }
+
   ngOnInit(): void {
   }
 
@@ -175,6 +191,19 @@ export class CustomizeComponent implements OnInit {
 
 
   send(){
-    //qui inviamo il dato al db
+    const headers = { 'Content-Type': 'application/json' };
+    return this.http
+        .patch<iUser>(
+          `${this.userUrl}/${this.user.id}`,
+          { src: this.foto },
+          { headers }
+        )
+        .subscribe({
+          next: (updatedUser) => {
+            console.log('Patch successful:', updatedUser);
+            this.authServ.updateUserScore(updatedUser);
+          },
+          error: (error) => console.error('Error during patch:', error),
+        });
   }
 }

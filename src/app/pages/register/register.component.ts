@@ -80,6 +80,7 @@ export class RegisterComponent {
         username: this.form.get('username')?.value,
         password: this.form.get('psw')?.value,
         score: 0,
+        src:"/pappagalli/init.png",
       };
 
       this.authServ.register(user).subscribe(
