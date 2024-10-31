@@ -7,10 +7,12 @@ import { AuthService } from '../../services/auth.service';
   styleUrl: './navbar.component.scss',
 })
 export class NavbarComponent {
-  logged = false;
+  isLogged!: boolean;
   isMenuOpen: boolean = false;
 
-  constructor(private authServ: AuthService) {}
+  constructor(private authServ: AuthService) {
+    this.authServ.isLoggedIn$.subscribe((boolean) => (this.isLogged = boolean));
+  }
 
   logout() {
     this.authServ.logout();
