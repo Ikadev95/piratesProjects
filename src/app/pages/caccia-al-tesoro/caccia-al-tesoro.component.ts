@@ -162,19 +162,19 @@ export class CacciaAlTesoroComponent {
     }
   }
 
+  // quindicesimostep() {
+  //   this.incrementaClick();
+  //   if (this.indizi[13]) {
+  //     this.indizi[14] = true;
+  //   } else {
+  //     this.resetIndiziFino(12);
+  //   }
+  // }
+
   quindicesimostep() {
     this.incrementaClick();
     if (this.indizi[13]) {
       this.indizi[14] = true;
-    } else {
-      this.resetIndiziFino(12);
-    }
-  }
-
-  sedicesimostep() {
-    this.incrementaClick();
-    if (this.indizi[14]) {
-      this.indizi[15] = true;
       this.finegioco = true;
       this.punteggio -= this.contaclick;
       if (this.user.id) {

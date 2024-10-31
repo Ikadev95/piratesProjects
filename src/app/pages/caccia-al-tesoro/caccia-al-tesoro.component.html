@@ -1,5 +1,21 @@
 <!-- SEQUENZA PER FINIRE IL GIOCO SENZA ROMPERE TUTTO -->
-<!-- 1, 5, 4, 6, 3, 7, 8, 2, 14, 9, 10, 15, 13, 16, 11, 12,  -->
+<!-- 1 chi e che mette sei ma dice che e' un bel voto = img michele,michele
+  5 ban sempre piu' vicino e amicizia sempre piu lontana = bara, gianmarco
+   4 ho svoltato ma non funziona = orochimaru , giacomo
+    6 debagga sempre gli errori di michele prima che lui se ne accorga = foto , adriana
+     3 parla sempre ma non lo senti mai = cuffie rotto, andrea
+      7 grazie a lui i dinosauri hanno conquistatyo angular = foto gruppo wApp, fede
+       8 sta sempre a scrive sull'Ipad ma non gli appunti = foto IPAD, andrea L
+        2 quello che importuna sempre il professore = .....?...., danilo
+         14 quello che tra erba e musica e' diventato IL SAGGIO = Foto canna, riccardo
+          9 quello che la mattina non sa in quale paese si trova = foto mondo , valentin
+           10 la stremmer = logo youtube , melany
+            15 quella che si vede solo la fronte in cam , foto cam fronto , corinne
+             13 la web desiner di fiducia, pennelli . federica
+              12 quello che alla prima buid week aveva l'orologio baggato= foto orologio rotto, steven  ,
+               11 quello cdhe il sabato sera manda foto di bottiglie di alchol= foto di alc , tammaro ,
+                  -->
+<!-- -->
 
 <div class="container p-5">
   <div class="row text-center d-flex">
@@ -11,10 +27,14 @@
       (click)="primostep()"
     >
       <button class="button-13" role="button">
-        <span class="text">START</span>
+        <span class="text"
+          ><img src="MICHELE.jpg" class="w-50 rounded-5" alt="" />
+        </span>
+        <br />
+        <span class="text">MICHELE</span>
         <br />
         <span class="text" *ngIf="indizi[0]"
-          >Arr! Qui si trovano i dobloni! Clicca sulla casella dorata!
+          >ban sempre piu' vicino e amicizia sempre piu lontana
         </span>
         <span class="button-13-background"></span>
         <span class="button-13-border"></span>
@@ -47,10 +67,14 @@
       (click)="ottimostep()"
     >
       <button class="button-13" role="button">
-        <span class="text">START</span>
+        <span class="text"
+          ><img src="DANILO.jpg" class="w-50 rounded-5" alt=""
+        /></span>
+        <br />
+        <span class="text">DANILO</span>
         <br />
         <span class="text" *ngIf="indizi[7]"
-          >Arr! Qui si trovano i dobloni! Clicca sulla casella dorata!</span
+          >quello che tra erba e musica e' diventato il saggio</span
         >
         <span class="button-13-background"></span>
         <span class="button-13-border"></span>
@@ -83,9 +107,15 @@
       (click)="quintostep()"
     >
       <button class="button-13" role="button">
-        <span class="text">START</span>
+        <span class="text"
+          ><img src="ANDREA-C.jpg" class="w-50 rounded-5" alt=""
+        /></span>
         <br />
-        <span class="text" *ngIf="indizi[4]">terzo indizio </span>
+        <span class="text">ANDREA C.</span>
+        <br />
+        <span class="text" *ngIf="indizi[4]"
+          >grazie a lui i dinosauri hanno conquistato angular
+        </span>
         <span class="button-13-background"></span>
         <span class="button-13-border"></span>
 
@@ -117,9 +147,15 @@
       (click)="terzostep()"
     >
       <button class="button-13" role="button">
-        <span class="text">START</span>
+        <span class="text"
+          ><img src="GIACOMO.jpg" class="w-50 rounded-5" alt=""
+        /></span>
         <br />
-        <span class="text" *ngIf="indizi[2]">terzo indizio </span>
+        <span class="text">GIACOMO</span>
+        <br />
+        <span class="text" *ngIf="indizi[2]"
+          >debagga sempre gli errori di michele prima che lui se ne accorga
+        </span>
         <span class="button-13-background"></span>
         <span class="button-13-border"></span>
 
@@ -151,9 +187,15 @@
       (click)="secondostep()"
     >
       <button class="button-13" role="button">
-        <span class="text">START</span>
+        <span class="text"
+          ><img src="GIANMARCO.jpg" class="w-50 rounded-5" alt=""
+        /></span>
         <br />
-        <span class="text" *ngIf="indizi[1]">terzo indizio </span>
+        <span class="text">GIANMARCO</span>
+        <br />
+        <span class="text" *ngIf="indizi[1]"
+          >ho svoltato.... ma non funziona
+        </span>
         <span class="button-13-background"></span>
         <span class="button-13-border"></span>
 
@@ -185,9 +227,15 @@
       (click)="quartostep()"
     >
       <button class="button-13" role="button">
-        <span class="text">START</span>
+        <span class="text"
+          ><img src="ADRIANA.jpg" class="w-50 rounded-5" alt=""
+        /></span>
         <br />
-        <span class="text" *ngIf="indizi[3]">terzo indizio </span>
+        <span class="text">ADRIANA</span>
+        <br />
+        <span class="text" *ngIf="indizi[3]"
+          >parla sempre ma non lo senti mai
+        </span>
         <span class="button-13-background"></span>
         <span class="button-13-border"></span>
 
@@ -219,9 +267,15 @@
       (click)="sestostep()"
     >
       <button class="button-13" role="button">
-        <span class="text">START</span>
+        <span class="text"
+          ><img src="FEDERICO.jpg" class="w-50 rounded-5" alt=""
+        /></span>
         <br />
-        <span class="text" *ngIf="indizi[5]">terzo indizio </span>
+        <span class="text">FEDERICO</span>
+        <br />
+        <span class="text" *ngIf="indizi[5]"
+          >sta sempre a scrivere sull'iPad .... ma non si sa cosa
+        </span>
         <span class="button-13-background"></span>
         <span class="button-13-border"></span>
 
@@ -253,9 +307,15 @@
       (click)="settimostep()"
     >
       <button class="button-13" role="button">
-        <span class="text">START</span>
+        <span class="text"
+          ><img src="ANDREA-L.jpg" class="w-50 rounded-5" alt=""
+        /></span>
         <br />
-        <span class="text" *ngIf="indizi[6]">terzo indizio </span>
+        <span class="text">ANDREA L.</span>
+        <br />
+        <span class="text" *ngIf="indizi[6]"
+          >quello che importuna sempre il professore
+        </span>
         <span class="button-13-background"></span>
         <span class="button-13-border"></span>
 
@@ -287,9 +347,13 @@
       (click)="decimostep()"
     >
       <button class="button-13" role="button">
-        <span class="text">START</span>
+        <span class="text"
+          ><img src="VALENTIN.jpg" class="w-50 rounded-5" alt=""
+        /></span>
         <br />
-        <span class="text" *ngIf="indizi[9]">terzo indizio </span>
+        <span class="text">VALENTIN</span>
+        <br />
+        <span class="text" *ngIf="indizi[9]">la streamer </span>
         <span class="button-13-background"></span>
         <span class="button-13-border"></span>
 
@@ -321,9 +385,15 @@
       (click)="undicesimostep()"
     >
       <button class="button-13" role="button">
-        <span class="text">START</span>
+        <span class="text"
+          ><img src="MELANIE.jpg" class="w-50 rounded-5" alt=""
+        /></span>
         <br />
-        <span class="text" *ngIf="indizi[10]">terzo indizio </span>
+        <span class="text">MELANIE</span>
+        <br />
+        <span class="text" *ngIf="indizi[10]"
+          >quella che si vede solo la fronte quando parla in cam
+        </span>
         <span class="button-13-background"></span>
         <span class="button-13-border"></span>
 
@@ -355,9 +425,13 @@
       (click)="quindicesimostep()"
     >
       <button class="button-13" role="button">
-        <span class="text">START</span>
+        <span class="text"
+          ><img src="TAMMARO.jpg" class="w-50 rounded-5" alt=""
+        /></span>
         <br />
-        <span class="text" *ngIf="indizi[14]">terzo indizio </span>
+        <span class="text">TAMMARO</span>
+        <br />
+        <span class="text" *ngIf="indizi[14]"> GIOCO FINITO </span>
         <span class="button-13-background"></span>
         <span class="button-13-border"></span>
 
@@ -386,12 +460,18 @@
     <!-- 12 bottone -->
     <div
       class="button_buttonWrapper__Z0lN_ col-12 col-md-4"
-      (click)="sedicesimostep()"
+      (click)="quattordicesimostep()"
     >
       <button class="button-13" role="button">
-        <span class="text">START</span>
+        <span class="text"
+          ><img src="STEVEN.jpg" class="w-50 rounded-5" alt=""
+        /></span>
         <br />
-        <span class="text" *ngIf="indizi[15]">terzo indizio </span>
+        <span class="text">STEVEN</span>
+        <br />
+        <span class="text" *ngIf="indizi[13]"
+          >quello che il sabato sera manda le foto degli alcolici
+        </span>
         <span class="button-13-background"></span>
         <span class="button-13-border"></span>
 
@@ -423,9 +503,15 @@
       (click)="tredicesimostep()"
     >
       <button class="button-13" role="button">
-        <span class="text">START</span>
+        <span class="text"
+          ><img src="FEDERICA.jpg" class="w-50 rounded-5" alt=""
+        /></span>
         <br />
-        <span class="text" *ngIf="indizi[12]">terzo indizio </span>
+        <span class="text">FEDERICA</span>
+        <br />
+        <span class="text" *ngIf="indizi[12]"
+          >quello che alla prima build week aveva l'orologio baggato
+        </span>
         <span class="button-13-background"></span>
         <span class="button-13-border"></span>
 
@@ -457,9 +543,15 @@
       (click)="nonostep()"
     >
       <button class="button-13" role="button">
-        <span class="text">START</span>
+        <span class="text"
+          ><img src="RICCARDO.jpg" class="w-50 rounded-5" alt=""
+        /></span>
         <br />
-        <span class="text" *ngIf="indizi[8]">terzo indizio </span>
+        <span class="text">RICCARDO</span>
+        <br />
+        <span class="text" *ngIf="indizi[8]"
+          >quello che la mattina non sai in quale paese si trova
+        </span>
         <span class="button-13-background"></span>
         <span class="button-13-border"></span>
 
@@ -491,43 +583,13 @@
       (click)="dodicesimostep()"
     >
       <button class="button-13" role="button">
-        <span class="text">START</span>
+        <span class="text"
+          ><img src="CORINNE.jpg" class="w-50 rounded-5" alt=""
+        /></span>
         <br />
-        <span class="text" *ngIf="indizi[11]">terzo indizio </span>
-        <span class="button-13-background"></span>
-        <span class="button-13-border"></span>
-
-        <svg style="position: absolute" width="0" height="0">
-          <filter
-            id="remove-black-button-13"
-            color-interpolation-filters="sRGB"
-          >
-            <feColorMatrix
-              type="matrix"
-              values="1 0 0 0 0
-0 1 0 0 0
-0 0 1 0 0
--1 -1 -1 0 1"
-              result="black-pixels"
-            ></feColorMatrix>
-            <feComposite
-              in="SourceGraphic"
-              in2="black-pixels"
-              operator="out"
-            ></feComposite>
-          </filter>
-        </svg>
-      </button>
-    </div>
-    <!-- 16 bottone -->
-    <div
-      class="button_buttonWrapper__Z0lN_ col-12 col-md-4"
-      (click)="quattordicesimostep()"
-    >
-      <button class="button-13" role="button">
-        <span class="text">START</span>
+        <span class="text">CORINNE</span>
         <br />
-        <span class="text" *ngIf="indizi[13]">terzo indizio </span>
+        <span class="text" *ngIf="indizi[11]">la web designer di fiducia </span>
         <span class="button-13-background"></span>
         <span class="button-13-border"></span>
 
