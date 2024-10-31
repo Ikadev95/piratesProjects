@@ -11,33 +11,22 @@ export class ClassificaComponent implements OnInit {
   userArr: iUser[] = [];
   userArrOrd: iUser[] = [];
 
-  constructor(private userServ: UserService) {
-    this.getAllUser();
-    setTimeout(() => console.log(this.userArr, this.userArrOrd), 2000);
-  }
+  constructor(private userServ: UserService) {}
 
   ngOnInit() {
-    // this.userArrOrd = this.ordinamentoUserArr();
+    this.getAllUser();
   }
 
   getAllUser() {
     this.userServ.getAll().subscribe((user) => {
       this.userArr = user;
+      this.userArrOrd = this.ordinamentoUserArr();
+      console.log(this.userArr);
+      console.log(this.userArrOrd);
     });
   }
 
-  // ordinamentoUserArr() {
-  //   return this.userArr.sort((a, b) => b.score - a.score);
-  // }
-
   ordinamentoUserArr() {
-    let riferimento = this.userArr[0];
-
-    this.userArr.forEach((user) => {
-      if (user.score > riferimento.score) {
-        riferimento.score = user.score;
-        this.userArrOrd.push(riferimento);
-      }
-    });
+    return this.userArr.sort((a, b) => b.score - a.score);
   }
 }
