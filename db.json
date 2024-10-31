@@ -1,34 +1,14 @@
 {
   "users": [
     {
-      "email": "test@mail.it",
-      "password": "$2a$10$gDxPvpuHFj8zRJIdIHcceeOHOmKCssxXjO5Tn731/QBat/EQ43Tau",
-      "nome": "test",
-      "cognome": "test",
-      "username": "test",
-      "score": 81,
-      "src": "/pappagalli/spada-cappellopirata-cintura2.png",
-      "id": 18
-    },
-    {
-      "email": "pippo@gmail.com",
-      "password": "$2a$10$MUhx.a50XrdqSbl88RKjVuORYGtBJUNZ4DsHeScenqXpBIZUZAZdK",
-      "nome": "pippo",
-      "cognome": "pippo",
-      "username": "pippo",
-      "score": 100,
-      "src": "/pappagalli/spada-cintura-bandana.png",
-      "id": 19
-    },
-    {
-      "email": "mario@brega",
-      "password": "$2a$10$faIqyCgg87aLpErNgX9O7.cmeZ0GmgAXetHEPTFPCyzobs8UQ7im6",
-      "nome": "Mario",
-      "cognome": "Brega",
-      "username": "Marione",
-      "score": 87,
-      "src": "/pappagalli/init.png",
-      "id": 20
+      "email": "fegughi@gmail.com",
+      "password": "$2a$10$d3P7fubGi8Rw2OLK7.jtxug3dLoNzSum0STiZQ0dXAoUFi2/Zwz/G",
+      "nome": "Federica",
+      "cognome": "Guglielmo",
+      "username": "federika",
+      "score": 0,
+      "src": "/pappagalli/spada-cappellopirata-cintura.png",
+      "id": 1
     }
   ]
 }
