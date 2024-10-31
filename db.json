@@ -19,6 +19,16 @@
       "score": 100,
       "src": "/pappagalli/spada-cappellopirata-cintura.png",
       "id": 19
+    },
+    {
+      "email": "gianmarco@pirata.it",
+      "password": "$2a$10$FXVj1pTAsOVvpmGmBsjgIOmbIB6bO/q8XMaTwdrNAIqoqXETIhUxa",
+      "nome": "Gianmarco",
+      "cognome": "Arzanese",
+      "username": "Zanes",
+      "score": 101,
+      "src": "/pappagalli/spada-cappellopirata-cintura.png",
+      "id": 20
     }
   ]
 }

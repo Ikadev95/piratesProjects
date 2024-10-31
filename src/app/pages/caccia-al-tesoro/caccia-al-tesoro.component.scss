@@ -107,3 +107,158 @@ div {
     filter: url("#remove-black-button-13");
   }
 }
+//////////////////////////////////////////
+.game-over-container {
+  height: 100%;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  background: rgba(101, 44, 4, 0.316);
+  animation: fadeIn 0.8s ease-in;
+}
+
+.victory-title {
+  position: relative;
+  color: #ffd700;
+  text-align: center;
+  animation: slideDown 0.6s ease-out;
+}
+
+.treasure-text {
+  display: inline-block;
+  animation: pulse 2s infinite;
+}
+
+.treasure-icon {
+  display: inline-block;
+  font-size: 1.5em;
+  margin-left: 10px;
+  animation: bounce 1s infinite;
+}
+
+.new-record {
+  position: relative;
+  color: #ffd700;
+  text-align: center;
+  animation: scaleIn 0.8s ease-out;
+}
+
+.record-text {
+  display: inline-block;
+  background: linear-gradient(45deg, #ffd700, #ff8c00);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: glow 1.5s ease-in-out infinite alternate;
+}
+
+.sparkles {
+  position: absolute;
+  top: -10px;
+  right: -20px;
+  font-size: 1.2em;
+  animation: sparkle 1.4s infinite;
+}
+
+.score-display {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  animation: slideUp 0.6s ease-out;
+}
+
+.score-value {
+  font-size: 1.4em;
+  color: #ffd700;
+  text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+}
+
+/* Animazioni */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideDown {
+  from {
+    transform: translateY(-50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes bounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    transform: scale(0);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes glow {
+  from {
+    text-shadow: 0 0 5px #ffd700, 0 0 10px #ffd700, 0 0 15px #ff8c00;
+  }
+  to {
+    text-shadow: 0 0 10px #ffd700, 0 0 20px #ffd700, 0 0 30px #ff8c00;
+  }
+}
+
+@keyframes sparkle {
+  0% {
+    transform: scale(1) rotate(0deg);
+  }
+  50% {
+    transform: scale(1.2) rotate(180deg);
+  }
+  100% {
+    transform: scale(1) rotate(360deg);
+  }
+}

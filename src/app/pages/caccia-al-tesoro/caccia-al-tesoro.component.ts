@@ -14,7 +14,7 @@ export class CacciaAlTesoroComponent {
   indiziIndex: number = 0;
   finegioco: boolean = false;
   contaclick: number = 0;
-  punteggio: number = 116;
+  punteggio: number = 115;
   user!: iUser;
   userUrl: string = environment.userUrl;
   isRecord: boolean = false;

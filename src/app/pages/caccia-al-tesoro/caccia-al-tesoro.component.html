@@ -617,8 +617,19 @@
     </div>
   </div>
 </div>
-<h3 *ngIf="finegioco" class="text-center text-warning">
-  hai trovato il tesoro
-  <h1 *ngIf="isRecord" class="text-center text-warning">NUOVO RECORD</h1>
-  <h3>il tuo punteggio è {{ punteggio }}</h3>
-</h3>
+<div class="game-over-container" *ngIf="finegioco">
+  <h3 class="victory-title">
+    <span class="treasure-text">Hai trovato il tesoro!</span>
+    <div class="treasure-icon">🏆</div>
+  </h3>
+
+  <h1 *ngIf="isRecord" class="new-record">
+    <span class="record-text">NUOVO RECORD</span>
+    <div class="sparkles">✨</div>
+  </h1>
+
+  <h3 class="score-display">
+    <span class="score-label">Il tuo punteggio è</span>
+    <span class="score-value">{{ punteggio }}</span>
+  </h3>
+</div>
