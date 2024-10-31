@@ -2,7 +2,7 @@
   <div class="row d-flex justify-content-center">
     <div class="col-6 text-center">
       <h2
-        class="p-3 text-center fw-bold fs-1 bg-white rounded-3 pirate-title animate__animated animate__fadeInDown"
+        class="p-3 text-center fw-bold fs-1 back rounded-3 pirate-title animate__animated animate__fadeInDown"
       >
         Registrati sulla nave pirata
       </h2>
@@ -23,7 +23,7 @@
           'is-valid': isValid('nome')
         }"
       />
-      <label for="firstName" class="form-label">Nome</label>
+      <label for="firstName" class="form-label text-white">Nome</label>
       <p *ngIf="isInvalid('nome')" class="error-message">
         Campo nome non valido
       </p>
@@ -40,7 +40,7 @@
           'is-valid': isValid('cognome')
         }"
       />
-      <label for="lastName" class="form-label">Cognome</label>
+      <label for="lastName" class="form-label text-white">Cognome</label>
       <p *ngIf="isInvalid('cognome')" class="error-message">
         Campo cognome non valido
       </p>
@@ -57,7 +57,7 @@
           'is-valid': isValid('username')
         }"
       />
-      <label for="username" class="form-label">Username</label>
+      <label for="username" class="form-label text-white">Username</label>
       <p *ngIf="isInvalid('username')" class="error-message">
         Campo username non valido
       </p>
@@ -74,7 +74,7 @@
           'is-valid': isValid('email')
         }"
       />
-      <label for="email" class="form-label">Email</label>
+      <label for="email" class="form-label text-white">Email</label>
       <p *ngIf="isInvalid('email')" class="error-message">
         Campo email non valido
       </p>
@@ -91,7 +91,7 @@
           'is-valid': isValid('psw')
         }"
       />
-      <label for="password" class="form-label">Password</label>
+      <label for="password" class="form-label text-white">Password</label>
       <p *ngIf="isInvalid('psw')" class="error-message">
         Campo password non valido
       </p>
@@ -107,7 +107,7 @@
     <div class="d-grid">
       <button
         (click)="signup()"
-        class="btn btn-custom animate__animated animate__pulse"
+        class="btn btn-custom animate__animated animate__pulse text-white"
         [disabled]="!form.valid"
       >
         Registrati

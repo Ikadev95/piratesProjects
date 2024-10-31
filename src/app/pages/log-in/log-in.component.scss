@@ -1,5 +1,5 @@
-$danger: #2483e2;
-$primary: #007bff;
+$danger: #f49f9f;
+$primary: #0c2845;
 
 @keyframes fadeInDown {
   from {
@@ -127,9 +127,6 @@ $primary: #007bff;
   }
 }
 
-div {
-  font-family: "Pirata One", cursive;
-}
 
 .pirate-bg {
   background-image: url("/src/assets/sfondo.png");
@@ -144,8 +141,12 @@ div {
 .form-container {
   max-width: 400px;
   margin: 50px auto;
-  background-color: #fff;
+  background: rgba(12, 40, 69, 0.4);
+  border-radius: 12px;
   padding: 40px;
+  border: 2px solid rgba(43, 163, 168, 0.2);
+  backdrop-filter: blur(4px);
+  transition: all 0.3s ease;
   border-radius: 10px;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
 }
@@ -191,27 +192,27 @@ div {
 }
 
 .btn-custom {
-  background-color: $primary;
+  background-color: #0c2845;
   color: white;
   font-weight: bold;
-  border-radius: 50px;
+  border-radius: 12px;
   padding: 10px 20px;
   transition: background-color 0.3s ease;
   animation: pulse 1s infinite;
 }
 
 .btn-custom:hover {
-  background-color: darken($primary, 10%);
+  background-color: darken(#0c2845, 10%);
 }
 
 .pirate-link {
-  color: $primary;
+  color:  $primary;
   text-decoration: none;
   transition: color 0.3s ease;
   animation: bounceIn 1s;
 
   &:hover {
-    color: darken($primary, 10%);
+    color: darken(#0c2845, 10%);
   }
 }
 
@@ -220,4 +221,16 @@ div {
   font-size: 14px;
   margin-top: 5px;
   animation: shakeX 0.5s;
+}
+.back{
+    margin: 50px auto;
+    background: rgba(12, 40, 69, 0.4);
+    border-radius: 12px;
+    padding: 40px;
+    border: 2px solid rgba(43, 163, 168, 0.2);
+    backdrop-filter: blur(4px);
+    transition: all 0.3s ease;
+    border-radius: 10px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    color:white;
 }
