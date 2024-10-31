@@ -19,6 +19,16 @@
       "score": 0,
       "src": "/pappagalli/init.png",
       "id": 2
+    },
+    {
+      "email": "andrea@andrea",
+      "password": "$2a$10$JrvnM46EpFtjCWQyWdS9j.HZVZWKAWgnciZ0Xwu0/vwVrQW5X1UAO",
+      "nome": "andrea",
+      "cognome": "andrea",
+      "username": "andrea",
+      "score": 91,
+      "src": "/pappagalli/cintura-spada2.png",
+      "id": 3
     }
   ]
 }
