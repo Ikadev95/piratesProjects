@@ -21,14 +21,32 @@
       id="navbarScroll"
     >
       <ul class="navbar-nav ms-auto my-2 my-lg-0">
-        <li class="nav-item">
+        <li class="nav-item" *ngIf="!isLogged">
+          <a class="nav-link text-white pointer" routerLink="">Welcome</a>
+        </li>
+        <li class="nav-item" *ngIf="!isLogged">
           <a class="nav-link text-white pointer" routerLink="/login"> login</a>
         </li>
-        <li class="nav-item">
+        <li class="nav-item" *ngIf="!isLogged">
+          <a class="nav-link text-white pointer" routerLink="/register">
+            sign-up</a
+          >
+        </li>
+        <li class="nav-item" *ngIf="isLogged">
+          <a class="nav-link text-white pointer" routerLink="/home">Home</a>
+        </li>
+        <li class="nav-item" *ngIf="isLogged">
+          <a class="nav-link text-white pointer" routerLink="/classifica"
+            >Classifica</a
+          >
+        </li>
+
+        <li class="nav-item" *ngIf="isLogged">
           <a class="nav-link text-white pointer" (click)="logout()">
             <i class="fa-solid fa-right-from-bracket"></i> logout</a
           >
         </li>
+
         <div class="d-flex align-items-center">
           <div class="flex-shrink-0 dropdown">
             <a
