@@ -44,6 +44,15 @@
       "username": "Zanes",
       "score": 108,
       "id": 17
+    },
+    {
+      "email": "federico.peralta@hotmail.it",
+      "password": "$2a$10$oi1iNNxrWVKL7bAoO9Z9R.bP.TXySeovOg.ORl0OpqClHBTvdcrFa",
+      "nome": "Federico",
+      "cognome": "Peralta",
+      "username": "Fedepera",
+      "score": 0,
+      "id": 18
     }
   ]
 }
