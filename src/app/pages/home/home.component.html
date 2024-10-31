@@ -5,7 +5,7 @@
         <h3>Vesti il tuo pirata</h3>
         <div class="d-flex flex-column">
           <div class="img-container">
-            <img class="imgPap" src="/pappagalli/init.png" alt="pappagallo" />
+            <img class="imgPap" [src]="user.src" alt="pappagallo" />
           </div>
           <button
             class="btn btn-primary justify-content-center mt-2"
@@ -17,11 +17,13 @@
       </div>
 
       <div class="p-3 user-profile">
-        <p>{{ user.nome }} {{ user.cognome }}</p>
-        <p>{{ user.email }}</p>
+        <p>🦜 {{ user.nome }} {{ user.cognome }}</p>
+        <p>📨 {{ user.email }}</p>
+        <p>🏆 {{user.score}}</p>
       </div>
     </div>
-    <div class="col-12 col-md-6 col-lg-8 colxl-9">
+    <div class="col-12 col-md-6 col-lg-8 col-xl-9 px-5 text">
+      <div class="text">
       <h1 class="mt-2">Benvenuti a Bordo, Coraggiosi Avventurieri!</h1>
       <p>Salpate verso un mondo di avventure senza fine!</p>
       <p class="">
@@ -38,8 +40,8 @@
         Affilate le menti, preparatevi a risolvere enigmi e dimostrate di essere
         veri pirati, pronti a conquista ⚔️
       </p>
-
-      <div class="button-container">
+    </div>
+      <div class="button-container ">
         <button routerLink="/che-pirata-sei" class="btn-pirate">
           &nbsp; Vai al quiz
         </button>

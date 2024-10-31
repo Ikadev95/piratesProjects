@@ -24,7 +24,6 @@ export class HomeComponent {
         this.user = user;
       }
     });
-
     console.log(this.user);
   }
 
