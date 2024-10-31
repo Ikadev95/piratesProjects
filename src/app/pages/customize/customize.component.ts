@@ -142,6 +142,10 @@ export class CustomizeComponent implements OnInit {
       }
     });
     this.foto = this.user.src
+    if(this.foto === "/pappagalli/init2.png"){this.fotog = "/pappagalli/init.png" }
+    else{
+      this.fotog = "/pappagalli/init.png"
+    }
   }
 
   ngOnInit(): void {

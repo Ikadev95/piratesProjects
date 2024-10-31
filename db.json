@@ -53,8 +53,18 @@
       "cognome": "test",
       "username": "test",
       "score": 0,
-      "src": "/pappagalli/spada-bandana2.png",
+      "src": "/pappagalli/spada-cappellopirata-cintura2.png",
       "id": 18
+    },
+    {
+      "email": "pippo@gmail.com",
+      "password": "$2a$10$MUhx.a50XrdqSbl88RKjVuORYGtBJUNZ4DsHeScenqXpBIZUZAZdK",
+      "nome": "pippo",
+      "cognome": "pippo",
+      "username": "pippo",
+      "score": 0,
+      "src": "/pappagalli/spada-cappellopirata-cintura.png",
+      "id": 19
     }
   ]
 }
