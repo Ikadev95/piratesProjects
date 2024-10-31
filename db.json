@@ -44,6 +44,15 @@
       "username": "Zanes",
       "score": 108,
       "id": 17
+    },
+    {
+      "email": "andrea2@andrea",
+      "password": "$2a$10$vs/qtsOz869wHzgu2q8NC.GkXIbO3iOTQjRdM/Pcpm/lDidzca0Ca",
+      "nome": "andrea2",
+      "cognome": "andrea2",
+      "username": "andrea2",
+      "score": 74,
+      "id": 18
     }
   ]
 }
