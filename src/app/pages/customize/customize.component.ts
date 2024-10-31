@@ -9,7 +9,7 @@ export class CustomizeComponent implements OnInit {
 
   foto: string = "/pappagalli/init.png";
 
-  fotog: string = "/pappagalli/init.png"
+  fotog: string = "/pappagalli/init2.png";
 
   spada: boolean = false;
   cintura: boolean = false;
@@ -149,6 +149,10 @@ export class CustomizeComponent implements OnInit {
         break;
       case 'genere':
         this.genere = !this.genere;
+        if(this.fotog === "/pappagalli/init2.png"){this.fotog = "/pappagalli/init.png"}
+        else{
+          this.fotog = "/pappagalli/init2.png"
+        }
         break;
     }
     this.updateFoto();
