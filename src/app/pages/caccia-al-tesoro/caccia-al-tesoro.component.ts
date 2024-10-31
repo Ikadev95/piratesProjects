@@ -18,6 +18,7 @@ export class CacciaAlTesoroComponent {
   user!: iUser;
   userUrl: string = environment.userUrl;
   isRecord: boolean = false;
+  showContainer: boolean = true;
 
   constructor(private authServ: AuthService, private http: HttpClient) {
     this.authServ.user$.subscribe((user) => {
@@ -177,6 +178,7 @@ export class CacciaAlTesoroComponent {
       this.indizi[14] = true;
       this.finegioco = true;
       this.punteggio -= this.contaclick;
+      this.showContainer = false;
       if (this.user.id) {
         this.addScoreAtUser(this.user.id, this.user.score, this.punteggio);
         console.log('punteggio', this.punteggio);
